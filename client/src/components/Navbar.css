@@ -1,0 +1,25 @@
+
+Body .navbar{
+ font-weight: 500;
+ padding: 2rem 2rem;
+ font-size: 1rem;
+   }
+
+Body .navLink{
+    color: unset;
+}
+Body .navLink:hover{
+    color: #FD5BD6;
+}
+    
+Body .btnAssociado{
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid #FFFF;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 1rem;
+}
+
+Body .btnAssociado:hover{
+    background-color:#FD5BD6;
+    border: 1px solid #FFFF;
+}

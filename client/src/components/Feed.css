@@ -1,0 +1,38 @@
+.feed {
+    background: url('../Assets/images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.familyImage{
+    width: 100%;
+}
+
+#title{
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#subtitle{
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    
+}
+
+.Header{
+   
+    padding: 2rem;
+    align-items: center;
+    text-align: left;
+}
+
+#mission{
+    font-size: 2rem;
+}
+
+#missionDescription{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
