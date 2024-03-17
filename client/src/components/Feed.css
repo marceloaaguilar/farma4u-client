@@ -1,5 +1,5 @@
 .feed {
-    background: url('../Assets/images/bg.png');
+    background: linear-gradient(to top,#0486ff 0% ,#09C8FE 100%);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -7,22 +7,20 @@
     width: 100%;
 }
 
+.casalIdosos{
+    width: 100%;
+}
 #title{
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    text-transform: uppercase;
 }
 
 #subtitle{
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 900;
-    text-transform: uppercase;
-    word-wrap: break-word;
-    
 }
 
 .Header{
-   
     padding: 2rem;
     align-items: center;
     text-align: left;
@@ -36,3 +34,21 @@
     margin-top: 2rem;
     font-size: 1.2rem;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    #title{
+        padding-top: 1rem;
+    }
+    #subtitle{
+        font-size: 2rem;
+        font-weight: 900;
+    }
+    .Header{
+        text-align: center;
+    }
+}
+
+    
+    

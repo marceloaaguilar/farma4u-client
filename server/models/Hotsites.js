@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
     const Hotsites = sequelize.define("Hotsites",{
         id: {
@@ -13,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
             },
             primaryKey: true
         },
+
+        image: {
+            type: DataTypes.STRING
+        },
+        
         primaryColor:{
             type: DataTypes.STRING,
             allowNull: false,
@@ -28,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         }
     })
+
 
     return Hotsites;
 

@@ -1,29 +1,29 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import family from '../Assets/images/family.png';
-import casalIdosos from '../Assets/images/casalIdosos.png';
 import feedCSS from './Feed.css'
+import Image from 'react-bootstrap/Image';
+
 
 function Feed(){
     return (
-        <div className='feed'>
+        <div className='feed' style={{color: '#FFFFFF'}}>
             <Container>
-                <Row className='Header'>
-                    <Col xs={7}>
+                <Row className="Header"> 
+                    <Col lg={6} sm={12}>
                         <h1 id="title">Clube Farma For You</h1>
-                        <h1 id="subtitle">Medicamentos <br /> com preços mais <br /> acessíveis do Brasil</h1>
+                        <h1 id="subtitle">Medicamentos <br /> com preços mais <br /> acessíveis do Brasil!</h1>
                     </Col>
-                    <Col>
-                        <img className="familyImage" src={family} alt="Imagem de uma Família" />    
+                    <Col >
+                        <Image className="familyImage" src={'family.png'} alt="Imagem de uma Família" />    
                     </Col>
 
                 </Row>
-                <Row className='Header'>
-                    <Col>
-                        <img className="casalIdosos" src={casalIdosos} alt="Imagem de uma Família" />    
+                <Row className="Header">
+                    <Col lg={6} sm={12} >
+                        <Image className="casalIdosos" src={'casalIdosos.png'} alt="Imagem de uma Família" />    
                     </Col>
-                    <Col xs={6}>
+                    <Col >
                         <h1 id='mission'>
                             Nossa missão é dar aquela força e cuidar de todo mundo! Oferecemos remédios a preço justo, de um jeito fácil, seguro e que todo mundo pode pagar.
                         </h1>
@@ -32,9 +32,6 @@ function Feed(){
                         </p>
                     </Col>
                 </Row>
-
-
-
             </Container>
         </div>
 

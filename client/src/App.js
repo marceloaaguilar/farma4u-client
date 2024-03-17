@@ -1,41 +1,23 @@
-import './App.css';
-import axios from 'axios';
-import Feed from './components/Feed';
-import NavbarHotsite from './components/NavbarHotsite';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {React,useState, useEffect} from 'react';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";  
+import Hotsite from "./Pages/HotSite";
+import ErrorPage from "./Pages/ErrorPage";
+import Admin from "./Pages/Admin";
+import Matriz from "./Pages/Matriz";
 
 function App(){
-  const [data, setData] = useState('');
-  let primaryColor  = '#00CCFF';
-  let secondColor   = '#FFFFFF';
-  const queryParameters = new URLSearchParams(window.location.search)
-  const params = queryParameters.get("hotsite");
-  useEffect(() => {      
-  axios.get('http://localhost:3001/hotsite/' + params).then((res)=>{
-    setData(res.data[0]);
-    })
-  },[])
-
-  if(data != null){
-    primaryColor = data.primaryColor;
-    secondColor  = data.secondColor;
-  }
-  const divStyle = {
-    color: secondColor,
-    backgroundColor: primaryColor,
-  };
-
+  
 
   return (
-    <div className='App'>
-      <div style={divStyle}>
-        <NavbarHotsite />
-      </div>
-      <div>
-        <Feed/>
-      </div>
-    </div>
+         <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Matriz/>}> </Route>
+              <Route path="/:hotsite" element={<Hotsite/>}></Route>
+              <Route path="/admin" element={<Admin/>}></Route>
+              <Route path="*" element={<ErrorPage/>}></Route>
+          </Routes>
+         </BrowserRouter>
+   
     )
 }
 
