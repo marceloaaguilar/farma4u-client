@@ -6,18 +6,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import CpfCnpj from "@react-br-forms/cpf-cnpj-mask";
+
 
 const Login = () => {
     const location = useLocation();
     const values = location.pathname.split('/');
     const companyName = values[1];
     const [data, setData] = useState('');
-    let image =  null;
     let returnStm;
-
-    const [cpfCnpj, setCpfCnpj] = useState("");
-    const [mask, setMask] = useState("");
     
     useEffect(() => {  
             if(values[2] == 'login'){    
@@ -47,7 +43,7 @@ const Login = () => {
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Digite seu CPF</Form.Label>
-                        <CpfCnpj className="customizedInput form-control " placeholder="Digite um CPF ou CNPJ" type="tel" value={cpfCnpj} onChange={(event, type) => {setCpfCnpj(event.target.value); setMask(type === "CPF"); }}/>
+                        <Form.Control className="customizedInput form-control " placeholder="Digite um CPF ou CNPJ" type="tel"/>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
