@@ -21,7 +21,7 @@ const Hotsite = () => {
   let navigate = useNavigate(); 
 
   const getHotsiteData = async () => {
-     api.get(`/hotsite/${hotsite}`).then((res)=>{
+     api.get(`http://sistema.farma4u.com.br/api/${hotsite}`).then((res)=>{
        setData(res.data);
       }).catch((err) => {
         navigate('/404');
