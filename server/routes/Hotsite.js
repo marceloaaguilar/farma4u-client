@@ -5,8 +5,8 @@ const {Hotsites} = require("../models");
 const hotsiteController = require('../controllers/hotsiteController.js');
  
 router.get('/:nomeSite', function(req,res){
-    Hotsites.findAll({where:{urlSite: req.params.nomeSite }}).then((HotsitesResult)=>{
-        if(HotsitesResult){
+    Hotsites.findOne({where:{urlSite: req.params.nomeSite }}).then((HotsitesResult)=>{
+        if(HotsitesResult != null){
             res.send(HotsitesResult);
         }
         else{

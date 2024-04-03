@@ -1,16 +1,18 @@
 {
   "development": {
-    "username": "root",
-    "password": "12345",
-    "database": "farm4u_hotsites",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "u350383554_farma4u_admin",
+    "password": "f4u2024FaRmA76313637",
+    "database": "u350383554_farma4u",
+    "host": "185.211.7.154",
+    "dialect": "mysql",
+    "port"   :3306
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "u350383554_farma4u_admin",
+    "password": "f4u2024FaRmA76313637",
+    "database": "u350383554_farma4u",
+    "host": "185.211.7.154",
+    "dialect": "mysql",
+    "port"   :3306
   }
 }
