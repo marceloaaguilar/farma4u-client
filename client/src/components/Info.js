@@ -5,17 +5,16 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Info.css';
 
-const Info = function() {
-
+const Info = function({dadosClient}) {
     const btnFaleConsco = {
         marginBottom: '2rem',
         padding: '10px 5rem 10px 5rem',
-        color: '#fff',
-        border: 'none',
+        color: dadosClient.secondColor,
+        border: `1px solid ${dadosClient.secondColor}`,
         borderRadius: '40px',
         fontSize: '22px',
         cursor: 'pointer',
-        backgroundColor:'#ff5bd6',
+        backgroundColor: dadosClient.primaryColor,
         fontWeight: 900,
     };
 

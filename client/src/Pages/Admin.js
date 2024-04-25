@@ -1,11 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/esm/Container';
-import axios from 'axios'
 import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-axios.defaults.baseURL = 'http://localhost:3001';
+import {api} from '../utils/axios';
 
 const AddSite = ({ history }) => {
 
@@ -38,7 +37,7 @@ const AddSite = ({ history }) => {
         formData.append('urlSite', urlSite)
         formData.append('primaryColor', primaryColor)
         formData.append('secondColor', secondColor)
-        const request = await axios.post('/api/addSite', formData).then(r =>{
+        const request = await api.post('/addSite', formData).then(r =>{
             if(r.status == 200){
                 notify();
             }

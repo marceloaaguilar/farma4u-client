@@ -17,10 +17,12 @@ app.use('/api', router);
 
 const db = require('./models');
 
+const PORT = 5001;
+
 
 
 db.sequelize.sync().then((req)=> {
-    app.listen(3001, ()=>{
+    app.listen(PORT, ()=>{ 
         console.log("Server running");
     })
 });
