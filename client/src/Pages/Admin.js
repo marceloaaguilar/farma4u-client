@@ -16,8 +16,6 @@ const AddSite = ({ history }) => {
     const notify = () => {
         const id = toast.loading("Por favor aguarde...");
         toast.update(id, { render: "Site cadastrado com sucesso!", type: "success", isLoading: false });
-    
-    
     }
 
     const addSiteController = async(e) => {
