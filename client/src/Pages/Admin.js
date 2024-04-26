@@ -52,7 +52,7 @@ const AddSite = ({ history }) => {
 
     return (
         <Container>
-            <ToastContainer />
+            <ToastContainer/>
              <Form style={{marginTop: '5rem'}}>
 
                 <h1 style={{marginBottom: '2rem'}}>Cadastro de novos clientes</h1>

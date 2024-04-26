@@ -7,20 +7,23 @@ import Container from 'react-bootstrap/esm/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Login(){
 
-	const [data, setData] 	= useState('');
+	const [data, setData] 			= useState('');
 	const {hotsite} 				= useParams();
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] 		= useState('');
+	const [password, setPassword] 	= useState('');
 	const [modalFirstAccess, ShowModalFirstAccess] = useState(false);
 	const [cpfPrimeiroAcesso, setcpfPrimeiroAcesso] = useState('');
 	
 	useEffect(() => {      
-		api.get(`/hotsite/${hotsite}`).then((res)=>{
-			setData(res.data[0]);
-			} )
+		api.get(`/${hotsite}`).then((res)=>{
+			setData(res.data);
+			} ).catch((err) => {
+        console.log(err)
+			  });
 		},[]);
 
 	const handleClick = (e) => {
@@ -36,23 +39,34 @@ export default function Login(){
 		ShowModalFirstAccess(false);
 	}
 
-	const enviaCodigo = () => {
+	const enviaCodigo = (e) => {
+    e.preventDefault();
 
+    if (cpfPrimeiroAcesso.length != 11){
 		const objFirstAccess = {
 			"cpf": cpfPrimeiroAcesso
 		}
-		api.post('http://localhost:5000/auth/member-first-access', JSON.stringify(objFirstAccess)).then((response)=> {
-			console.log(response.status);
-		})
+
+    try{
+      api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/member-first-access', objFirstAccess).then((response)=> {
+        console.log(response);
+      })
+    }
+    catch(error){
+      console.log(error)
+    }
 
 		
-	}
+	  }
+
+  }
 
 
 
 	if (data != null && data != undefined){
 		return(
 			<>
+        <ToastContainer/>
 				<Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem", color: data.secondColor, backgroundColor: data.primaryColor}}>
 					<Container style={{justifyContent: 'center'}}>
 						<Navbar.Brand className="navbarBrand">
@@ -96,7 +110,7 @@ export default function Login(){
 							</Form>
 					 </Modal.Body>
 					<Modal.Footer>
-						<Button variant="secondary" onClick={handleClose}>
+						<Button variant="secondary" onClick={handleClose} style={{backgroundColor: 'red', border: 'none'}}>
 							Fechar
 						</Button>
 						<Button variant="primary" onClick={enviaCodigo} style={{backgroundColor: data.primaryColor, color: data.secondColor,border: 'none'}}>
@@ -111,9 +125,7 @@ export default function Login(){
 		<h1> Cliente não encontrado!</h1>
 	)
 			
-				
-	
-
+		
       
 
 }

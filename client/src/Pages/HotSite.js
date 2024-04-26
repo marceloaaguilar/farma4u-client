@@ -24,6 +24,7 @@ const Hotsite = () => {
      api.get(`/${hotsite}`).then((res)=>{
        setData(res.data);
       }).catch((err) => {
+        console.log(err)
         navigate('/404');
       });
   }
