@@ -21,19 +21,22 @@ function App(){
               <Route path="/:hotsite/login" element={<Login/>}></Route>
               <Route path="*" element={<ErrorPage/>}></Route>
               <Route path="/404" element={<ErrorPage/>}></Route>
-              <Route path="/:hotsite/dashboard" 
-                element={ 
-                  <div>
-                    <SidebarComponent/>
-                    <PaginaInicial/>
-                </div>
-                }>
+
+              <Route path="/:hotsite/dashboard" element={
+                <div style={{display: 'flex'}}>
+                  <SidebarComponent/>
+                  <PaginaInicial/>
+                </div>}>
+              </Route>
+
+              <Route path="/:hotsite/solicitar" element={
+                <div style={{display: 'flex'}}>
+                  <SidebarComponent/>
+                  <SolicitarMedicamento/>
+                </div>}>
               </Route>
 
 
-              {/* <Route element={<SidebarComponent/>}>
-                  <Route path="/:hotsite/dashboard/solicitar" element={<SolicitarMedicamento/>}></Route>
-              </Route> */}
           </Routes>
          </BrowserRouter>
    

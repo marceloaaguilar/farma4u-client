@@ -1,0 +1,13 @@
+.ps-menu-button {
+    color: #000000  !important;
+    padding-left: 0 !important;
+}
+
+.ps-menu-label {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+}
+ a{
+    color: black !important;
+ }

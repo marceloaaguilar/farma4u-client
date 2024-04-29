@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
 import swal from 'sweetalert';
+import Cookies from "universal-cookie";
 
 export default function Login(){
 
@@ -22,6 +23,7 @@ export default function Login(){
   const [codigoConfirmacao, setCodeConfirmacao] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const navigate = useNavigate(); 
+  const cookies = new Cookies();
 	
 	useEffect(() => {
 		api.get(`/${hotsite}`).then((res)=>{
@@ -112,12 +114,17 @@ export default function Login(){
 
     api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/login-member', objLogin).then((response)=> {
       if (response.status == 200){
+        const tokenLogin = response.headers["access-token"]
+        var date = new Date();
+        date.setHours(date.getHours() + 2);
+        cookies.remove("jwt_authorization");
         swal({text:'Login realizado. Redirecionando...', timer: 3000, buttons: false});
-        localStorage.setItem('userId', response.data.user.id);
+        cookies.set("jwt_authorization", tokenLogin, {
+          expires:  date
+        });
+        localStorage.setItem('userData', JSON.stringify({userId : response.data.user.id, urlSite: data.urlSite }));
         navigate('/' + data.urlSite + '/Dashboard');
       }
-
-      return true;
     })
     .catch((error) =>{
       swal("Erro", error.response.data.message, "error");
