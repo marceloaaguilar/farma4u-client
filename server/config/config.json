@@ -1,10 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "qJzzhgbEozxWVFjuYVVPyLKSDYsdYWaP",
+    "password": "12345",
     "database": "farm4u_hotsites",
-    "host": "monorail.proxy.rlwy.net",
-    "port": "52648",
+    "host": "localhost",
+    "port": "3306",
     "dialect": "mysql"
   },
   "production": {

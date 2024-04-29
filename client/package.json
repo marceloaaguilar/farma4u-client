@@ -6,8 +6,12 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.16.4",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.376.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
@@ -16,6 +20,8 @@
     "react-toastify": "^10.0.5",
     "serve": "^14.2.1",
     "sweetalert": "^2.1.2",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -42,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
   }
 }

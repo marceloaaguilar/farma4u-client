@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { api } from '../utils/axios';
 import { useState, useEffect } from 'react';
-import {Navigate, useParams } from 'react-router-dom';
+import {useNavigate, useParams } from 'react-router-dom';
 import Container from 'react-bootstrap/esm/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
@@ -21,12 +21,14 @@ export default function Login(){
   const [formCode, showFormCode] = useState(false);
   const [codigoConfirmacao, setCodeConfirmacao] = useState('');
   const [newPassword, setNewPassword] = useState('');
+  const navigate = useNavigate(); 
 	
 	useEffect(() => {
 		api.get(`/${hotsite}`).then((res)=>{
 			setData(res.data);
 			}).catch((err) => {
         console.log(err)
+        navigate('/404');
 			  });
 		},[]);
     
@@ -112,7 +114,7 @@ export default function Login(){
       if (response.status == 200){
         swal({text:'Login realizado. Redirecionando...', timer: 3000, buttons: false});
         localStorage.setItem('userId', response.data.user.id);
-        // Navigate(data.urlSite + './Dashboard.js')
+        navigate('/' + data.urlSite + '/Dashboard');
       }
 
       return true;
@@ -209,7 +211,7 @@ export default function Login(){
 	}
 
 	return(
-		<h1> Cliente não encontrado!</h1>
+    <p>Carregando...</p>
 	)
 			
 		
