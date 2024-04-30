@@ -7,35 +7,33 @@ import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link, useLocation } from "react-router-dom";
+import Logout from "../Pages/Logout";
 
 export default function SidebarComponent(){
+  const {LogoutUser} = Logout();
   const [collapsed, setCollapsed] = useState(false);
-  const [urlSite, setUrlSite] = useState('');
   const location = useLocation();
 
-
-  return (
+  return (  
     <div style={{ display: 'flex', height: '100vh', paddingRight: '3rem'}}>
       <Sidebar collapsed={collapsed} collapsedWidth="60px">
         <Menu>
           <MenuItem>
               <MenuOutlinedIcon className="sb-button" onClick={() => setCollapsed(!collapsed)}/>
           </MenuItem>
-            <Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/dashboard'}> 
-              <MenuItem> 
-                    <HomeIcon/> Página Inicial
-              </MenuItem>
-            </Link>
+          <MenuItem> 
+              <Link Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/dashboard'}> 
+                <HomeIcon/> Página Inicial
+              </Link>
+          </MenuItem>
           <MenuItem> 
             <Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/solicitar'}>
               <AddCircleIcon/> Solicitar Medicamentos
             </Link>
           </MenuItem>
           <MenuItem> <MedicalServicesIcon/>Farmácias</MenuItem>
-          <MenuItem> 
-            <Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/logout'}>
+          <MenuItem onClick={function() {LogoutUser()}}> 
               <LogoutIcon/> Sair
-            </Link>
           </MenuItem>
         </Menu>
       </Sidebar>

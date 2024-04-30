@@ -14,30 +14,28 @@ function App(){
 
   return (
          <BrowserRouter>
-          <Routes>
-              <Route path="/" element={<Matriz/>}> </Route>
-              <Route path="/admin" element={<Admin/>}></Route>
-              <Route path="/:hotsite" element={<Hotsite/>}></Route>
-              <Route path="/:hotsite/login" element={<Login/>}></Route>
-              <Route path="*" element={<ErrorPage/>}></Route>
-              <Route path="/404" element={<ErrorPage/>}></Route>
+            <Routes>
+                <Route path="/" element={<Matriz/>}> </Route>
+                <Route path="/admin" element={<Admin/>}></Route>
+                <Route path="/:hotsite" element={<Hotsite/>}></Route>
+                <Route path="/:hotsite/login" element={<Login/>}></Route>
+                <Route path="*" element={<ErrorPage/>}></Route>
+                <Route path="/404" element={<ErrorPage/>}></Route>
+                <Route path="/:hotsite/dashboard" element={
+                  <div style={{display: 'flex'}}>
+                    <SidebarComponent/>
+                    <PaginaInicial/>
+                  </div>}>
+                </Route>
 
-              <Route path="/:hotsite/dashboard" element={
-                <div style={{display: 'flex'}}>
-                  <SidebarComponent/>
-                  <PaginaInicial/>
-                </div>}>
-              </Route>
+                <Route path="/:hotsite/solicitar" element={
+                  <div style={{display: 'flex'}}>
+                    <SidebarComponent/>
+                    <SolicitarMedicamento/>
+                  </div>}>
+                </Route>
 
-              <Route path="/:hotsite/solicitar" element={
-                <div style={{display: 'flex'}}>
-                  <SidebarComponent/>
-                  <SolicitarMedicamento/>
-                </div>}>
-              </Route>
-
-
-          </Routes>
+            </Routes>
          </BrowserRouter>
    
     )
