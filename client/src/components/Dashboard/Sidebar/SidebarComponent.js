@@ -15,23 +15,31 @@ export default function SidebarComponent(){
   const location = useLocation();
 
   return (  
-    <div style={{ display: 'flex', height: '100vh', paddingRight: '3rem'}}>
+    <div style={{ display: 'flex', height: '100vh'}}>
       <Sidebar collapsed={collapsed} collapsedWidth="60px">
         <Menu>
           <MenuItem>
               <MenuOutlinedIcon className="sb-button" onClick={() => setCollapsed(!collapsed)}/>
           </MenuItem>
-          <MenuItem> 
-              <Link Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/dashboard'}> 
-                <HomeIcon/> Página Inicial
-              </Link>
-          </MenuItem>
-          <MenuItem> 
-            <Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/solicitar'}>
+
+          <Link Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/dashboard'}> 
+            <MenuItem> 
+              <HomeIcon/> Página Inicial
+            </MenuItem>
+          </Link>
+
+          <Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/solicitar'}>
+            <MenuItem> 
               <AddCircleIcon/> Solicitar Medicamentos
-            </Link>
-          </MenuItem>
-          <MenuItem> <MedicalServicesIcon/>Farmácias</MenuItem>
+            </MenuItem>
+          </Link>
+
+          <Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/farmacias'}>
+            <MenuItem> 
+              <MedicalServicesIcon/>Farmácias
+            </MenuItem>
+          </Link>
+
           <MenuItem onClick={function() {LogoutUser()}}> 
               <LogoutIcon/> Sair
           </MenuItem>

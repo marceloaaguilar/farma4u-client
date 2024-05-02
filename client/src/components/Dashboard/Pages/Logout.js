@@ -1,7 +1,6 @@
 import swal from 'sweetalert';
 import Cookies from "universal-cookie";
 import {useNavigate} from 'react-router-dom';
-import { useEffect } from 'react';
 
 
 export default function Logout(){
@@ -23,7 +22,6 @@ export default function Logout(){
                 cookies.remove("jwt_authorization");
                 const URLSite = JSON.parse(localStorage.getItem('userData')).urlSite;
                 navigate('/' + URLSite + '/login');
-                localStorage.removeItem('userData');
             }
           })
           

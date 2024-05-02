@@ -6,6 +6,8 @@ import { api } from "../../../utils/axios";
 import Cookies from "universal-cookie";
 import Card from 'react-bootstrap/Card';
 import {useNavigate} from 'react-router-dom';
+import './Dashbboard.css';
+
 
 export default function PaginaInicial(){
 
@@ -36,17 +38,19 @@ export default function PaginaInicial(){
   }
 
     return (
-      Object.keys(memberData).length != 0 ? <Container style={{paddingTop: '5rem'}}> 
-        <h1>Olá, {memberData.name}</h1>
-        <Card style={{ width: '18rem' }}>
-          <Card.Body>
-            <Card.Title>Você já economizou:</Card.Title>
-            <Card.Text style={{fontWeight: '700', fontSize: '2rem'}}>
-              R$ {memberData.totalSavings}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Container>: <p style={{paddingTop: '5rem'}}>Carregando...</p>
+      <div className="init" style={{width: '80vw'}}> 
+        {Object.keys(memberData).length != 0 ? <Container style={{paddingTop: '5rem', display:'flex', flexDirection: 'column', justifyContent: 'center'}}> 
+          <p style={{fontSize: '2.5rem', fontWeight: '300', marginBottom: '2rem'}}>Olá, {memberData.name}</p>
+          <Card style={{ width: '25rem' }}>
+            <Card.Body>
+              <Card.Title style={{fontSize: '2rem'}}>Você já economizou:</Card.Title>
+              <Card.Text style={{fontWeight: '700', fontSize: '3rem'}}>
+                R$ {memberData.totalSavings}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Container>: <p style={{paddingTop: '5rem'}}>Carregando...</p>}
+      </div>
     );
 
 }

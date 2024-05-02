@@ -8,6 +8,7 @@ import Login from "./Pages/Login";
 import PaginaInicial from "./components/Dashboard/Pages/PaginaInicial";
 import SidebarComponent from "./components/Dashboard/Sidebar/SidebarComponent";
 import SolicitarMedicamento from "./components/Dashboard/Pages/SolicitarMedicamento";
+import Farmacias from "./components/Dashboard/Pages/Farmacias";
 
 function App(){
   
@@ -32,6 +33,13 @@ function App(){
                   <div style={{display: 'flex'}}>
                     <SidebarComponent/>
                     <SolicitarMedicamento/>
+                  </div>}>
+                </Route>
+
+                <Route path="/:hotsite/farmacias" element={
+                  <div style={{display: 'flex'}}>
+                    <SidebarComponent/>
+                    <Farmacias/>
                   </div>}>
                 </Route>
 
