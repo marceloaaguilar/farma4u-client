@@ -2,9 +2,9 @@
 module.exports = (sequelize, DataTypes) => {
     const Hotsites = sequelize.define("Hotsites",{
         id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
+            type: DataTypes.STRING,
+            primaryKey: true,
+            allowNull: false
           },        
         urlSite:{
             type: DataTypes.STRING,

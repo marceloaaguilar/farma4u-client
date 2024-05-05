@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Info.css';
+import { Typography } from '@mui/material';
 
 const Info = function({dadosClient}) {
     const btnFaleConsco = {
@@ -21,18 +22,19 @@ const Info = function({dadosClient}) {
     const cardExplanation = {
         width: '100%' , 
         height: '100%',
-        background: 'linear-gradient(to top,#ff5bd6 0% ,#1998C1 100%)',
+        background: dadosClient.primaryColor,
         borderRadius: '50px',
         alignItens: 'center',
-        display: 'flex'
+        display: 'flex',
+        color: dadosClient.secondColor
         
     }
 
     const cardTitle = {
-        backgroundColor: '#FE5BD4', 
+        backgroundColor: dadosClient.secondColor, 
         padding: '0.5rem', 
         borderRadius: '1rem', 
-        color: '#ffffff', 
+        color: dadosClient.primaryColor,
         fontWeight: '700',
         boxShadow: '0px 3px 10px rgba(0, 0, 0, 0.5)',
         marginBottom: '1rem'
@@ -49,12 +51,12 @@ const Info = function({dadosClient}) {
 
     return (
         <div>
-        <Container style={{marginTop: '2rem'}}>
-                <Button style={btnFaleConsco}> Fale Conosco</Button>
-                <h1 style={{color: '#ff5bd6'}}>Como Funciona?</h1>
-        </Container>
-        <div className="cards">
-          <Row className="rowCards">
+          <Container style={{marginTop: '4rem'}}>
+            <Button style={btnFaleConsco}> Fale Conosco</Button>
+            <Typography style={{color: dadosClient.primaryColor, fontWeight: 700, fontSize: '2rem', marginTop:'2rem'}}>Como Funciona?</Typography>
+          </Container>
+        <div className="cards mt-3">
+          <Row className="rowCards mb-5">
               <Col> 
                   <Card style={cardExplanation }>
                       <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/assinatura.png" />
@@ -109,18 +111,10 @@ const Info = function({dadosClient}) {
             </div>
             <Container>
                 <div className='footer' style={{margin: '2rem'}}>
-                <p>Medicamentos com preços mais acessível do Brasil! <br/> copyright ©2024 Farma For You.</p>
-
+                  <p>Medicamentos com preços mais acessível do Brasil! <br/> copyright ©2024 Farma For You.</p>
                 </div>
-
-
             </Container>
             </div>
-
-
-
-
-
     )
 
 }

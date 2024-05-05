@@ -54,17 +54,16 @@ export default function Login(){
 			"cpf": cpfPrimeiroAcesso
 		}
 
-    try {
       api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/member-first-access', objFirstAccess).then((response)=> {
         if(response.status == 200){
           showFormCPF(false);
           showFormCode(true);
         }
       })
-    }
-    catch(error){
-      console.log(error)
-    }
+      .catch((error) =>{
+        swal("Erro", error.response.data.message, "error");
+        return false
+    });
   }
 
   const confirmaCodigo = async (e) => {
@@ -139,7 +138,7 @@ export default function Login(){
 				<Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem", color: data.secondColor, backgroundColor: data.primaryColor}}>
 					<Container style={{justifyContent: 'center'}}>
 						<Navbar.Brand className="navbarBrand">
-							<Image src={'../Images/' + data.image} className='logoHotsite'/>
+							<Image src={process.env.PUBLIC_URL + '/Images/' + data.image} className='logoHotsite'/>
 						</Navbar.Brand>
 					</Container>
 				</Navbar>

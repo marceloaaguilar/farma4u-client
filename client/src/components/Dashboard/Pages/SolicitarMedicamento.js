@@ -1,29 +1,35 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+
 import './Dashbboard.css'
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 export default function SolicitarMedicamento(){
     return(
-        <Container style={{paddingTop: '5rem', width: '80vw'}} className='farmacias'>
-          <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
-            <p style={{fontSize: '2.5rem', fontWeight: '300', marginBottom: '2rem'}}>Faça seu pedido de medicamentos pelo Whatsapp</p>
-            <Row>
-              <Col>
-                  <Link className='farmacias-link'>
-                  <Card style={{ width: '30rem'}}>
-                      <Card.Img variant="top" style={{width: '100%', height: '10rem', objectFit: 'contain'}} src="/whatsappLogo2.png" />
-                      <Card.Body>
-                      <Card.Title>Faça seu pedido via Whatsapp</Card.Title>
-                      </Card.Body>
-                  </Card>
-                  </Link>
-              </Col>
-            </Row>
-          </div>
-      </Container>
+      <Container maxWidth="md">
+        <Card sx={{ maxWidth: 700 }} className='mt-5'>
+          <CardMedia
+            sx={{ height: 250 }}
+            image="/whatsappLogo2.png"
+            title="Entrar em contato pelo Whatsapp"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Entre em contato pelo Whatsapp e faça seu pedido
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Nossa equipe de atendimento está pronta para receber o seu pedido!
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Entrar em contato</Button>
+          </CardActions>
+      </Card>
+    </Container>
     )
 
 

@@ -17,6 +17,19 @@ router.get('/:nomeSite', function(req,res){
     })
 })
 
+router.get('/find/:id', function(req,res){
+    Hotsites.findOne({where:{id: req.params.id }}).then((HotsitesResult)=>{
+        if(HotsitesResult != null){
+            res.send(HotsitesResult);
+        }
+        else{
+            res.status(404).send("Not Found");
+        }
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
+
 router.get('/:nomeSite/login', function(req,res){
     Hotsites.findAll({where:{urlSite: req.params.nomeSite }}).then((HotsitesResult)=>{
         if(HotsitesResult){
@@ -32,6 +45,10 @@ router.get('/:nomeSite/login', function(req,res){
 
 
 router.post('/addSite', hotsiteController.upload, hotsiteController.addSite);
+
+router.put('/updateSite/:hotsiteId', hotsiteController.upload, hotsiteController.updateSite);
+
+router.patch('/delete/:hotsiteId', hotsiteController.deleteSite);
 
 
 

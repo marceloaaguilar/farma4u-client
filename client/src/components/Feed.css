@@ -12,12 +12,13 @@
 }
 #title{
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 300;
 }
 
 #subtitle{
     font-size: 3rem;
     font-weight: 900;
+    line-height: 4rem;
 }
 
 .Header{
@@ -28,6 +29,7 @@
 
 #mission{
     font-size: 2rem;
+    font-weight: 500;
 }
 
 #missionDescription{

@@ -8,7 +8,6 @@ import {api} from '../utils/axios';
 
 const AddSite = ({ history }) => {
 
-
     const [urlSite, seturlSite] = useState('')
     const [primaryColor, setprimaryColor] = useState(0)
     const [secondColor, setsecondColor] = useState('')
@@ -23,7 +22,7 @@ const AddSite = ({ history }) => {
             e.preventDefault();
             addSiteHandler();
         } catch (error) {
-            
+            console.log(error)
         }
     }
 
@@ -39,13 +38,8 @@ const AddSite = ({ history }) => {
             if(r.status == 200){
                 notify();
             }
-
-
-
         })
-    
     }
-
 
 
     return (
@@ -57,8 +51,7 @@ const AddSite = ({ history }) => {
 
                 <Form.Group className="mb-3" controlId="formBasicText">
                     <Form.Label>Url Site</Form.Label>
-                    <Form.Control type="text" name="urlSite" placeholder="Url do novo Site" value={urlSite} onChange={(e) => seturlSite(e.target.value)}
-                             />
+                    <Form.Control type="text" name="urlSite" placeholder="Url do novo Site" value={urlSite} onChange={(e) => seturlSite(e.target.value)} />
                 </Form.Group>
 
                 <Form.Group controlId="formFile" className="mb-3">
