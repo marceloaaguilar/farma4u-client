@@ -9,6 +9,7 @@ import PaginaInicial from "./components/Dashboard/Pages/PaginaInicial";
 import SidebarComponent from "./components/Dashboard/Sidebar/SidebarComponent";
 import SolicitarMedicamento from "./components/Dashboard/Pages/SolicitarMedicamento";
 import Farmacias from "./components/Dashboard/Pages/Farmacias";
+import LoginFarma from "./Pages/LoginFarma";
 
 function App(){
   
@@ -20,8 +21,10 @@ function App(){
                 <Route path="/admin" element={<Admin/>}></Route>
                 <Route path="/:hotsite" element={<Hotsite/>}></Route>
                 <Route path="/:hotsite/login" element={<Login/>}></Route>
+                <Route path="/login" element={<LoginFarma/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
                 <Route path="/404" element={<ErrorPage/>}></Route>
+                
                 <Route path="/:hotsite/dashboard" element={
                   <div style={{display: 'flex'}}>
                     <SidebarComponent/>

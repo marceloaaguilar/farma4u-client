@@ -3,12 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Matriz.css';
 
 const Matriz = () => {
+
     return (
     <div className="wrapper">
         <div className="cover">
@@ -22,7 +22,7 @@ const Matriz = () => {
                             <Nav.Link className='navLink' href="#Missao">Missão</Nav.Link>
                             <Nav.Link className='navLink' href="#Planos">Plano</Nav.Link>
                             <Nav.Link className='navLink' href="#funciona">Como Funciona</Nav.Link>
-                            <Nav.Link className='navLink' href="#join-us">
+                            <Nav.Link className='navLink' href='/login'>
                                 <a style={{textDecoration: 'none'}}>Área do Associado</a>
                             </Nav.Link>
                         </Nav>

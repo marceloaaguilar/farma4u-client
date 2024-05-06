@@ -6,7 +6,6 @@ import { api } from "../../../utils/axios";
 import Cookies from "universal-cookie";
 import {useNavigate} from 'react-router-dom';
 import './Dashbboard.css';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
