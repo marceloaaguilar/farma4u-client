@@ -35,7 +35,7 @@ const AddSite = ({ history }) => {
         formData.append('primaryColor', primaryColor)
         formData.append('secondColor', secondColor)
         const request = await api.post('/addSite', formData).then(r =>{
-            if(r.status == 200){
+            if(r.status === 200){
                 notify();
             }
         })
