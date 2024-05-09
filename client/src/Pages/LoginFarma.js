@@ -24,6 +24,7 @@ export default function LoginFarma(){
   const [newPassword, setNewPassword] = useState('');
   const navigate = useNavigate(); 
   const cookies = new Cookies();
+  const [objLogin, setObjLogin] = useState({cpf : '', password: ''})
 	
     
 
@@ -88,19 +89,16 @@ export default function LoginFarma(){
       console.log(error);
     }
   }
+  console.log(objLogin);
   
   const handleLogin = (e) => {
 
+
     e.preventDefault();
 
-    if (cpf.length != 11){
+    if (objLogin.cpf.length != 11){
       swal("Atenção!", "O CPF deve possuir 11 caracteres!", "error");
       return false;
-    }
-
-    const objLogin = {
-      "cpf" : cpf,
-      "password" : password,
     }
 
     api.post(process.env.REACT_APP_BASE_URL_API + '/auth/login-member', objLogin).then((response)=> {
@@ -118,6 +116,7 @@ export default function LoginFarma(){
       }
     })
     .catch((error) =>{
+      console.log(error);
       swal("Erro", error.response.data.message, "error");
       return false
     });
@@ -125,7 +124,7 @@ export default function LoginFarma(){
   }
 
 		return(
-			<div style={{backgroundImage: 'linear-gradient(-2deg, #00CCFF 0%, #FF5BD6 100%)', height: '100vh'}}>
+			<div style={{backgroundImage: 'linear-gradient(-2deg, #00CCFF 0%, #FF5BD6 100%)', height: '150vh'}}>
 				<Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem", color: "#FFFFFF", }}>
 					<Container style={{justifyContent: 'center'}}>
 						<Navbar.Brand className="navbarBrand">
@@ -140,11 +139,11 @@ export default function LoginFarma(){
 							<Form style={{width: '40vw'}}>
 								<Form.Group className="mb-3" controlId="formBasicEmail">
 									<Form.Label>Digite seu CPF</Form.Label>
-									<Form.Control type="text" name="CPF"  onChange={e => setCPF(e.target.value)} value={cpf} placeholder="Digite seu CPF" maxLength={11} />
+									<Form.Control type="text" name="CPF"  onChange={e => setObjLogin({...objLogin, cpf: e.target.value})} value={objLogin.cpf} placeholder="Digite seu CPF" maxLength={11} />
 								</Form.Group>
 								<Form.Group className="mb-3" controlId="formBasicPassword">
 									<Form.Label>Senha</Form.Label>
-									<Form.Control type="password" name="password"  onChange={e => setPassword(e.target.value)} value={password} placeholder="Senha" />
+									<Form.Control type="password" name="password"  onChange={e => setObjLogin({...objLogin, password : e.target.value})} value={objLogin.password} placeholder="Senha" />
 								</Form.Group>
 								<Button type="submit" onClick={handleLogin} style={{backgroundColor: '#FF5BD6', color: '#FFFFFF', marginTop: '1rem', border: 'none'}}>
 									Realizar Login
