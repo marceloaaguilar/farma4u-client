@@ -46,7 +46,7 @@ export default function LoginFarma(){
 			"cpf": cpfPrimeiroAcesso
 		}
 
-      api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/member-first-access', objFirstAccess).then((response)=> {
+      api.post(process.env.REACT_APP_BASE_URL_API + '/auth/member-first-access', objFirstAccess).then((response)=> {
         if(response.status == 200){
           showFormCPF(false);
           showFormCode(true);
@@ -74,7 +74,7 @@ export default function LoginFarma(){
 
     try {
 
-      await api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/member-first-password', objPassword).then((response)=> {
+      await api.post(process.env.REACT_APP_BASE_URL_API + '/auth/member-first-password', objPassword).then((response)=> {
         if (response.status == 201){
           swal("Cadastro realizado!", "Seu cadastro foi feito com sucesso.", "success");
           ShowModalFirstAccess(false);
@@ -103,7 +103,7 @@ export default function LoginFarma(){
       "password" : password,
     }
 
-    api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/login-member', objLogin).then((response)=> {
+    api.post(process.env.REACT_APP_BASE_URL_API + '/auth/login-member', objLogin).then((response)=> {
       if (response.status == 200){
         const tokenLogin = response.headers["access-token"]
         var date = new Date();
@@ -113,8 +113,8 @@ export default function LoginFarma(){
         cookies.set("jwt_authorization", tokenLogin, {
           expires:  date
         });
-        localStorage.setItem('userData', JSON.stringify({userId : response.data.user.id, urlSite: data.urlSite }));
-        navigate('/' + data.urlSite + '/Dashboard');
+        localStorage.setItem('userData', JSON.stringify({userId : response.data.user.id}));
+        navigate('/Dashboard');
       }
     })
     .catch((error) =>{

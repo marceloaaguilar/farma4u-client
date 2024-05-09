@@ -35,7 +35,7 @@ export default function PaginaInicial(){
 
   async function processaDadosMember(){
     try{
-      await api.get(process.env.REACT_APP_BASE_URL_API_0 + '/member/' + JSON.parse(localStorage.getItem('userData')).userId, {headers: {"Authorization" : `Bearer ${cookies.get("jwt_authorization")}` } }).then((response)=> {
+      await api.get(process.env.REACT_APP_BASE_URL_API + '/member/' + JSON.parse(localStorage.getItem('userData')).userId, {headers: {"Authorization" : `Bearer ${cookies.get("jwt_authorization")}` } }).then((response)=> {
         if (response.status == 200){
           setMemberData(response.data.member);
           response.data.member.orders.forEach(el => {

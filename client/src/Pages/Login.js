@@ -54,7 +54,7 @@ export default function Login(){
 			"cpf": cpfPrimeiroAcesso
 		}
 
-      api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/member-first-access', objFirstAccess).then((response)=> {
+      api.post(process.env.REACT_APP_BASE_URL_API + '/auth/member-first-access', objFirstAccess).then((response)=> {
         if(response.status == 200){
           showFormCPF(false);
           showFormCode(true);
@@ -82,7 +82,7 @@ export default function Login(){
 
     try {
 
-      await api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/member-first-password', objPassword).then((response)=> {
+      await api.post(process.env.REACT_APP_BASE_URL_API + '/auth/member-first-password', objPassword).then((response)=> {
         if (response.status == 201){
           swal("Cadastro realizado!", "Seu cadastro foi feito com sucesso.", "success");
           ShowModalFirstAccess(false);
@@ -111,7 +111,7 @@ export default function Login(){
       "password" : password,
     }
 
-    api.post(process.env.REACT_APP_BASE_URL_API_0 + '/auth/login-member', objLogin).then((response)=> {
+    api.post(process.env.REACT_APP_BASE_URL_API + '/auth/login-member', objLogin).then((response)=> {
       if (response.status == 200){
         const tokenLogin = response.headers["access-token"]
         var date = new Date();
