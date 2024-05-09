@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "189016",
-    "database": "farm4u",
-    "host": "localhost",
+    "username": "u350383554_farma4u_admin",
+    "password": "f4u2024FaRmA76313637",
+    "database": "u350383554_farma4u",
+    "host": "185.211.7.154",
     "port": 3306,
     "dialect": "mysql"
   },
