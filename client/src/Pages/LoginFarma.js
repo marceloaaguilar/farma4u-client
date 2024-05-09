@@ -89,7 +89,6 @@ export default function LoginFarma(){
       console.log(error);
     }
   }
-  console.log(objLogin);
   
   const handleLogin = (e) => {
 
