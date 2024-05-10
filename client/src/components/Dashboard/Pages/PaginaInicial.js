@@ -46,7 +46,7 @@ export default function PaginaInicial(){
         }})
     }catch(error){
       swal({text:'Você precisa se autenticar novamente. Redirecionando...', timer: 2000, buttons: false});
-      navigate('/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/login');
+      navigate('/' + JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ? JSON.parse(localStorage.getItem('userData')).urlSite : '' + '/login');
       return false
     }
   }
