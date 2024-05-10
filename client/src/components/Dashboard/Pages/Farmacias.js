@@ -4,8 +4,26 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import './Dashbboard.css'
+import { useEffect } from 'react';
+import swal from 'sweetalert';
+import {useNavigate} from 'react-router-dom';
 
 export default function Farmacias(){
+  
+  const navigate = useNavigate(); 
+  var urlSite = '';
+
+  useEffect(()=> {
+    if (localStorage.getItem('userData') == null || localStorage.getItem('userData') == undefined){
+      swal({text:'Você precisa se autenticar novamente. Redirecionando...', timer: 2000, buttons: false});
+
+      if(localStorage.getItem('userData') != null ){
+        urlSite = JSON.parse(localStorage.getItem('userData')).urlSite;
+      }
+
+      navigate(urlSite +  '/login');
+    }
+  },[]);
 
     return (
       <Container style={{paddingTop: '5rem'}} className='farmacias'>

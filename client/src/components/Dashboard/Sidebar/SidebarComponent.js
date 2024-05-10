@@ -13,6 +13,16 @@ export default function SidebarComponent(){
   const {LogoutUser} = Logout();
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
+  var urlSite = '';
+
+  useEffect(()=> {
+
+    if(localStorage.getItem('userData') != null ){
+      urlSite = JSON.parse(localStorage.getItem('userData')).urlSite;
+    }
+
+  },[]);
+
 
   return (  
     <div style={{ display: 'flex', height: '100vh'}}>
@@ -22,19 +32,19 @@ export default function SidebarComponent(){
               <MenuOutlinedIcon className="sb-button" onClick={() => setCollapsed(!collapsed)}/>
           </MenuItem>
 
-          <Link className="linkSidebar" Link to={JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ? '/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/dashboard' : '/dashboard'}> 
+          <Link className="linkSidebar" Link to={urlSite +  '/dashboard'}> 
             <MenuItem> 
               <HomeIcon/> Página Inicial
             </MenuItem>
           </Link>
 
-          <Link className="linkSidebar" to={JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ? '/' + JSON.parse(localStorage.getItem('userData')).urlSite  + '/solicitar': '/solicitar'}>
+          <Link className="linkSidebar" to={ urlSite + '/solicitar'}>
             <MenuItem> 
               <AddCircleIcon/> Solicitar Medicamentos
             </MenuItem>
           </Link>
 
-          <Link className="linkSidebar" to={JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ? '/' + JSON.parse(localStorage.getItem('userData')).urlSite  + '/farmacias': '/farmacias'}>
+          <Link className="linkSidebar" to={urlSite + '/farmacias'}>
             <MenuItem> 
               <MedicalServicesIcon/>Farmácias
             </MenuItem>

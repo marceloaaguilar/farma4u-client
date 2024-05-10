@@ -21,6 +21,7 @@ export default function Logout(){
             if (response){
                 cookies.remove("jwt_authorization");
                 const URLSite = localStorage.getItem('userData').urlSite != undefined ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite  : '' ;
+                localStorage.removeItem("userData");
                 navigate(URLSite  + '/login');
             }
           })
