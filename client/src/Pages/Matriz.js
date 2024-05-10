@@ -18,7 +18,7 @@ const Matriz = () => {
                     <Navbar.Brand className="navbarBrand logo"></Navbar.Brand>
                     <Navbar.Toggle className="navbar-toggler" aria-controls="basic-navbar-nav"  />
                     <Navbar.Collapse id="basic-navbar-nav" >
-                        <Nav className="me-auto">
+                        <Nav className="me-auto navMatriz">
                             <Nav.Link className='navLink' href="#Missao">Missão</Nav.Link>
                             <Nav.Link className='navLink' href="#Planos">Plano</Nav.Link>
                             <Nav.Link className='navLink' href="#funciona">Como Funciona</Nav.Link>

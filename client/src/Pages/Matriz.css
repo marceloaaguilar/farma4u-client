@@ -1,4 +1,4 @@
-/* Main stylesheet */
+/* Main stylesheet
 /* Base */
 body {
     font-family: "Open Sans", sans-serif; }
@@ -142,7 +142,7 @@ p {
 .navbar{
     padding: 0;
 }
-nav {
+.navMatriz {
     float: center;
     align-items: center;
 }
@@ -156,7 +156,7 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
+.navMatriz ul li {
     display: inline-block;
     margin-left: 20px;
 	color: #ff5bd6;
