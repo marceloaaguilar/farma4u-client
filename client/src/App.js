@@ -24,6 +24,13 @@ function App(){
                 <Route path="/login" element={<LoginFarma/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
                 <Route path="/404" element={<ErrorPage/>}></Route>
+
+                <Route path="/dashboard" element={
+                  <div style={{display: 'flex'}}>
+                    <SidebarComponent/>
+                    <PaginaInicial/>
+                  </div>}>
+                </Route>
                 
                 <Route path="/:hotsite/dashboard" element={
                   <div style={{display: 'flex'}}>
