@@ -135,7 +135,7 @@ export default function LoginFarma(){
 					<Container style={{marginTop: '4rem', justifyContent: 'center', display: 'flex'}}>
 						<div style={{justifyContent: 'center', border: '1px solid', padding: '4rem', borderRadius: '20px', borderColor: '#FFFFFF', color: '#FFFFFF'}}>
 							<h3 style={{marginBottom: '2rem'}}>Acesso à área do Associado</h3>
-							<Form style={{width: '40vw'}}>
+							<Form>
 								<Form.Group className="mb-3" controlId="formBasicEmail">
 									<Form.Label>Digite seu CPF</Form.Label>
 									<Form.Control type="text" name="CPF"  onChange={e => setObjLogin({...objLogin, cpf: e.target.value})} value={objLogin.cpf} placeholder="Digite seu CPF" maxLength={11} />
@@ -144,10 +144,10 @@ export default function LoginFarma(){
 									<Form.Label>Senha</Form.Label>
 									<Form.Control type="password" name="password"  onChange={e => setObjLogin({...objLogin, password : e.target.value})} value={objLogin.password} placeholder="Senha" />
 								</Form.Group>
-								<Button type="submit" onClick={handleLogin} style={{backgroundColor: '#FF5BD6', color: '#FFFFFF', marginTop: '1rem', border: 'none'}}>
+								<Button type="submit" onClick={handleLogin} style={{backgroundColor: '#FF5BD6', color: '#FFFFFF', marginTop: '1rem',  marginRight: '1rem' ,border: 'none'}}>
 									Realizar Login
 								</Button>
-								<Button onClick={handleShow} style={{background: 'none', borderColor: '#FFFFFF', marginLeft: '1rem', marginTop: '1rem'}}>
+								<Button onClick={handleShow} style={{background: 'none', borderColor: '#FFFFFF', marginTop: '1rem'}}>
 									Primeiro Acesso
 								</Button>
 							</Form>

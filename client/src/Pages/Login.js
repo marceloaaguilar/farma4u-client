@@ -146,7 +146,7 @@ export default function Login(){
 					<Container style={{marginTop: '4rem', justifyContent: 'center', display: 'flex'}}>
 						<div style={{justifyContent: 'center', border: '1px solid', padding: '4rem', borderRadius: '20px', borderColor: '#CCD0D5'}}>
 							<h3 style={{marginBottom: '2rem'}}>Acesso à área do Associado</h3>
-							<Form style={{width: '40vw'}}>
+							<Form >
 								<Form.Group className="mb-3" controlId="formBasicEmail">
 									<Form.Label>Digite seu CPF</Form.Label>
 									<Form.Control type="text" name="CPF"  onChange={e => setCPF(e.target.value)} value={cpf} placeholder="Digite seu CPF" maxLength={11} />

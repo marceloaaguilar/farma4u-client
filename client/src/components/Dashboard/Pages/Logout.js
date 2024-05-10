@@ -13,15 +13,15 @@ export default function Logout(){
             title: "Deseja realmente sair?",
             icon: "warning",
             buttons: [
-              'Não',
-              'Sim'
+              'Sim',
+              'Não'
             ],
             dangerMode: true,
           }).then((response)=>{
             if (response){
                 cookies.remove("jwt_authorization");
-                const URLSite = JSON.parse(localStorage.getItem('userData')).urlSite;
-                navigate('/' + URLSite + '/login');
+                const URLSite = localStorage.getItem('userData').urlSite != undefined ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite  : '' ;
+                navigate(URLSite  + '/login');
             }
           })
           

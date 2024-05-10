@@ -31,6 +31,20 @@ function App(){
                     <PaginaInicial/>
                   </div>}>
                 </Route>
+
+                <Route path="/solicitar" element={
+                  <div style={{display: 'flex'}}>
+                    <SidebarComponent/>
+                    <SolicitarMedicamento/>
+                  </div>}>
+                </Route>
+
+                <Route path="/farmacias" element={
+                  <div style={{display: 'flex'}}>
+                    <SidebarComponent/>
+                    <Farmacias/>
+                  </div>}>
+                </Route>
                 
                 <Route path="/:hotsite/dashboard" element={
                   <div style={{display: 'flex'}}>
