@@ -22,19 +22,19 @@ export default function SidebarComponent(){
               <MenuOutlinedIcon className="sb-button" onClick={() => setCollapsed(!collapsed)}/>
           </MenuItem>
 
-          <Link className="linkSidebar" Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/dashboard'}> 
+          <Link className="linkSidebar" Link to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ? JSON.parse(localStorage.getItem('userData')).urlSite : ''  + '/dashboard'}> 
             <MenuItem> 
               <HomeIcon/> Página Inicial
             </MenuItem>
           </Link>
 
-          <Link className="linkSidebar" to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/solicitar'}>
+          <Link className="linkSidebar" to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ? JSON.parse(localStorage.getItem('userData')).urlSite : ''  + '/solicitar'}>
             <MenuItem> 
               <AddCircleIcon/> Solicitar Medicamentos
             </MenuItem>
           </Link>
 
-          <Link className="linkSidebar" to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite + '/farmacias'}>
+          <Link className="linkSidebar" to={'/' + JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ? JSON.parse(localStorage.getItem('userData')).urlSite : ''  + '/farmacias'}>
             <MenuItem> 
               <MedicalServicesIcon/>Farmácias
             </MenuItem>
