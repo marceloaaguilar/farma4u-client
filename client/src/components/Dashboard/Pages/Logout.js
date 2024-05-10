@@ -13,8 +13,8 @@ export default function Logout(){
             title: "Deseja realmente sair?",
             icon: "warning",
             buttons: [
-              'Sim',
               'Não'
+              'Sim',
             ],
             dangerMode: true,
           }).then((response)=>{
