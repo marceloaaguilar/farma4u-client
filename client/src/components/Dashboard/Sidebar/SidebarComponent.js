@@ -4,25 +4,26 @@ import { useEffect } from "react"
 import { api } from "../../../utils/axios"
 import { Link } from "react-router-dom"
 
+
 const SidebarContext = createContext()
 
 export default function SidebarComponent({ children }) {
   const [expanded, setExpanded] = useState(false)
+  const [urlImage, setUrlImage] = useState('logo-f4u.png');
 
   var urlSite = '';
-  var urlImage = 'logo-f4u.png';
 
   useEffect(()=> {
     if(localStorage.getItem('userData') != null ){
       urlSite = JSON.parse(localStorage.getItem('userData')).urlSite;
       if(urlSite) {
         api.get(`/${urlSite}`).then((response)=> {
-        urlImage = response.image
+          setUrlImage(`Images/${response.data.image}`);
       })
       }
     }
 
-  },[]);
+  },[localStorage.getItem('userData')]);
   
   return (
     <aside style={{height: '200vh'}}>
@@ -37,8 +38,7 @@ export default function SidebarComponent({ children }) {
           />
           <button
             onClick={() => setExpanded((curr) => !curr)}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
-          >
+            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100">
             {expanded ? <ChevronFirst /> : <ChevronLast />}
           </button>
         </div>
@@ -53,8 +53,8 @@ export default function SidebarComponent({ children }) {
 }
 
 export function SidebarItem({ icon, text, active, alert, directory}) {
-  const { expanded } = useContext(SidebarContext)
 
+  const { expanded } = useContext(SidebarContext)
   var urlSite = '';
 
   useEffect(()=> {
@@ -65,7 +65,6 @@ export function SidebarItem({ icon, text, active, alert, directory}) {
   },[]);
   
   return (
-    <Link to={`${urlSite + directory}`}>
       <li
         className={`
         relative flex items-center py-2 px-3 my-1
@@ -85,9 +84,6 @@ export function SidebarItem({ icon, text, active, alert, directory}) {
         >
           {text}
         </span>
-
-
       </li>
-    </Link>
   )
 }

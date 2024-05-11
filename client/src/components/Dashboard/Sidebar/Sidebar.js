@@ -1,15 +1,58 @@
 import SidebarComponent from "./SidebarComponent";
 import { Home, CircleFadingPlus, Pill, LogOut} from "lucide-react";
 import { SidebarItem } from "./SidebarComponent";
-import '../../../index.css'
+import { Link } from "react-router-dom";
+import swal from 'sweetalert';
+import Cookies from "universal-cookie";
+import {useNavigate} from 'react-router-dom';
+
 
 export default function Sidebar({activeDirectory}){
-    return(
-        <SidebarComponent>
-            <SidebarItem icon={<Home size={20}/>} text={"Página Inicial"} directory={"/dashboard"}  active={activeDirectory == 'dashboard'? 'true' : 'false'}></SidebarItem>
-            <SidebarItem icon={<CircleFadingPlus size={20}/>} text={"Solicitar Medicamentos"} directory={"https://api.whatsapp.com/send?phone=31998226095"} ></SidebarItem>
-            <SidebarItem icon={<Pill size={20}/>} text={"Farmácias"} directory={"/farmacias"} active={activeDirectory == 'farmacias'? 'true' : 'false'} ></SidebarItem>
-        </SidebarComponent>
+
+  const cookies = new Cookies();
+  const navigate = useNavigate(); 
+
+  const LogoutUser = () => {
+
+    swal({
+        title: "Deseja realmente sair?",
+        icon: "warning",
+        buttons: [
+          'Não',
+          'Sim'
+        ],
+        dangerMode: true,
+      }).then((response)=>{
+        if (response){
+            cookies.remove("jwt_authorization");
+            const URLSite = localStorage.getItem('userData').urlSite != undefined ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite  : '' ;
+            localStorage.removeItem("userData");
+            navigate(URLSite  + '/login');
+        }
+      })
+  }
+   
+  return(
+    <SidebarComponent>
+
+        <Link to={"/dashboard"} style={{textDecoration: 'none'}}> 
+            <SidebarItem icon={<Home size={20}/>} text={"Página Inicial"}  active={activeDirectory == 'dashboard'? 'true' : 'false'}></SidebarItem>
+        </Link>
+
+        <Link to={"https://api.whatsapp.com/send?phone=31998226095"} target="_blank" style={{textDecoration: 'none'}}>
+            <SidebarItem  icon={<CircleFadingPlus size={20}/>} text={"Solicitar Medicamentos"} ></SidebarItem>
+        </Link>
+
+        <Link to={"/farmacias"} style={{textDecoration: 'none'}}>
+          <SidebarItem icon={<Pill size={20}/>} text={"Farmácias"} active={activeDirectory == 'farmacias'? 'true' : 'false'} ></SidebarItem>
+        </Link>
+
+        <div onClick={LogoutUser} style={{textDecoration: 'none'}}>
+          <SidebarItem icon={<LogOut size={20}/>} text={"Sair"} ></SidebarItem>
+        </div>
+  
+
+    </SidebarComponent>
     )
 
 

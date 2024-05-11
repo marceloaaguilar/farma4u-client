@@ -29,23 +29,16 @@ function App(){
               <PaginaInicial/>}>
           </Route>
 
-
           <Route path="/farmacias" element={
               <Farmacias/>}>
           </Route>
           
           <Route path="/:hotsite/dashboard" element={
-            <div style={{display: 'flex'}}>
-              <SidebarComponent/>
-              <PaginaInicial/>
-            </div>}>
+              <PaginaInicial/> }>
           </Route>
 
           <Route path="/:hotsite/farmacias" element={
-            <div style={{display: 'flex'}}>
-              <SidebarComponent/>
-              <Farmacias/>
-            </div>}>
+              <Farmacias/>}>
           </Route>
 
       </Routes>
