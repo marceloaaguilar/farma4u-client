@@ -134,8 +134,8 @@ export default function Login(){
 
 	if (data != null && data != ''){
 		return(
-			<>
-				<Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem", color: data.secondColor, backgroundColor: data.primaryColor}}>
+			<div style={{color: data.primaryColor, backgroundColor: data.secondColor, height: '150vh'}}>
+				<Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
 					<Container style={{justifyContent: 'center'}}>
 						<Navbar.Brand className="navbarBrand">
 							<Image src={process.env.PUBLIC_URL + '/Images/' + data.image} className='logoHotsite'/>
@@ -155,10 +155,10 @@ export default function Login(){
 									<Form.Label>Senha</Form.Label>
 									<Form.Control type="password" name="password"  onChange={e => setPassword(e.target.value)} value={password} placeholder="Senha" />
 								</Form.Group>
-								<Button type="submit" onClick={handleLogin} style={{backgroundColor: data.primaryColor, color: data.secondColor, marginTop: '1rem', border: 'none'}}>
+								<Button type="submit" onClick={handleLogin} style={{backgroundColor: data.primaryColor, color: data.secondColor, marginRight: '1rem', marginTop: '1rem', border: 'none'}}>
 									Realizar Login
 								</Button>
-								<Button onClick={handleShow} style={{background: 'none', borderColor: data.primaryColor, color: data.primaryColor, marginLeft: '1rem', marginTop: '1rem'}}>
+								<Button onClick={handleShow} style={{background: 'none', borderColor: data.primaryColor, color: data.primaryColor, marginTop: '1rem'}}>
 									Primeiro Acesso
 								</Button>
 							</Form>
@@ -210,7 +210,7 @@ export default function Login(){
               </Modal.Footer>
             </>: null}
         </Modal>
-			</>
+			</div>
 
 
 		)

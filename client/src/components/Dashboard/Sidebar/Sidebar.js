@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import swal from 'sweetalert';
 import Cookies from "universal-cookie";
 import {useNavigate} from 'react-router-dom';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 
 export default function Sidebar({activeDirectory}){
@@ -40,7 +41,7 @@ export default function Sidebar({activeDirectory}){
         </Link>
 
         <Link to={"https://api.whatsapp.com/send?phone=31998226095"} target="_blank" style={{textDecoration: 'none'}}>
-            <SidebarItem  icon={<CircleFadingPlus size={20}/>} text={"Solicitar Medicamentos"} ></SidebarItem>
+            <SidebarItem  icon={<WhatsAppIcon size={20}/>} text={"Solicitar Medicamentos"} ></SidebarItem>
         </Link>
 
         <Link to={"/farmacias"} style={{textDecoration: 'none'}}>
