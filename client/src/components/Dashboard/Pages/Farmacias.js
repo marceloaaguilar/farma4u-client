@@ -35,7 +35,7 @@ export default function Farmacias(){
           <Row style={{gap: '2rem', display: 'flex'}}>
             <Col>
               <Link className='farmacias-link'>
-                <Card style={{ width: '20rem' }}>
+                <Card style={{ width: '15rem' }}>
                     <Card.Img variant="top" style={{width: '100%', padding: '2rem 2rem 0.5rem 2rem', height: '10rem', objectFit: 'contain'}} src="/drogasmil.png" />
                   <Card.Body>
                     <Card.Title>Drogasmil</Card.Title>
@@ -46,7 +46,7 @@ export default function Farmacias(){
             </Col>
             <Col>
               <Link className='farmacias-link'>
-                <Card style={{ width: '20rem' }}>
+                <Card style={{ width: '15rem' }}>
                     <Card.Img variant="top" style={{width: '100%', padding: '2rem 2rem 0.5rem 2rem', height: '10rem', objectFit: 'contain'}} src="/droga-raia-logo.png" />
                   <Card.Body>
                     <Card.Title>Droga Raia</Card.Title>
@@ -57,7 +57,7 @@ export default function Farmacias(){
             </Col>
             <Col>
               <Link className='farmacias-link'>
-                <Card style={{ width: '20rem' }}>
+                <Card style={{ width: '15rem' }}>
                     <Card.Img variant="top" style={{width: '100%', padding: '2rem 2rem 0.5rem 2rem', height: '10rem', objectFit: 'contain'}} src="/drogasil-logo.png" />
                   <Card.Body>
                     <Card.Title>Drogasil</Card.Title>
