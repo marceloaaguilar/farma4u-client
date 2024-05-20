@@ -40,7 +40,7 @@ export default function Sidebar({activeDirectory}){
             <SidebarItem icon={<Home size={20}/>} text={"Página Inicial"}  active={activeDirectory == 'dashboard'? 'true' : 'false'}></SidebarItem>
         </Link>
 
-        <Link to={"https://api.whatsapp.com/send?phone=31998226095"} target="_blank" style={{textDecoration: 'none'}}>
+        <Link to={"https://api.whatsapp.com/send?phone=21973975300"} target="_blank" style={{textDecoration: 'none'}}>
             <SidebarItem  icon={<WhatsAppIcon size={20}/>} text={"Solicitar Medicamentos"} ></SidebarItem>
         </Link>
 
