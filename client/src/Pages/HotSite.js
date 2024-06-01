@@ -45,7 +45,7 @@ const Hotsite = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.urlSite.charAt(0).toUpperCase() + data.urlSite.slice(1)} - FARMA4U</title>
-        <meta property="og:title" content="Clube FARMA4U" />
+        <meta property="og:title" content={data.urlSite.charAt(0).toUpperCase() + data.urlSite.slice(1) + " - FARMA4U"} />
         <meta property="og:description" content="Medicamentos com preços mais acessíveis do Brasil." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={"%PUBLIC_URL%/" + data.image} />
