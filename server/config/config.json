@@ -1,17 +1,17 @@
 {
   "development": {
-    "username": "u350383554_farma4u_admin",
-    "password": "f4u2024FaRmA76313637",
-    "database": "u350383554_farma4u",
-    "host": "185.211.7.154",
+    "username": "root",
+    "password": "12345",
+    "database": "farm4u",
+    "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
   },
   "production": {
-    "username": "u350383554_farma4u_admin",
-    "password": "f4u2024FaRmA76313637",
-    "database": "u350383554_farma4u",
-    "host": "185.211.7.154",
+    "username": "root",
+    "password": "12345",
+    "database": "farma4u",
+    "host": "localhost",
     "dialect": "mysql",
     "port"   :3306
   }

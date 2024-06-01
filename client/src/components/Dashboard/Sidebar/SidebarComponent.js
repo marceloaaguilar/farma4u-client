@@ -2,7 +2,6 @@ import { ChevronLast, ChevronFirst } from "lucide-react"
 import { useContext, createContext, useState } from "react"
 import { useEffect } from "react"
 import { api } from "../../../utils/axios"
-import { Link } from "react-router-dom"
 
 
 const SidebarContext = createContext()
@@ -56,7 +55,7 @@ export function SidebarItem({ icon, text, active, alert, directory}) {
 
   const { expanded } = useContext(SidebarContext)
   var urlSite = '';
-
+  
   useEffect(()=> {
     if(localStorage.getItem('userData') != null ){
       urlSite = JSON.parse(localStorage.getItem('userData')).urlSite;
@@ -71,7 +70,7 @@ export function SidebarItem({ icon, text, active, alert, directory}) {
         font-medium rounded-md cursor-pointer
         transition-colors group
         ${
-          active == "true"
+          active === "true"
             ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
             : "hover:bg-indigo-50 text-gray-600"
         }

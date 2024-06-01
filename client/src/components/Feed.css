@@ -1,3 +1,5 @@
+
+
 .feed {
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,14 +19,15 @@
 
 #subtitle{
     font-size: 3rem;
-    font-weight: 900;
-    line-height: 4rem;
+    font-weight: 800;
+    line-height: 3.5rem;
 }
 
 .Header{
     padding: 2rem;
     align-items: center;
     text-align: left;
+    min-height: 40rem;
 }
 
 #mission{
@@ -44,11 +47,21 @@
         padding-top: 1rem;
     }
     #subtitle{
-        font-size: 2rem;
+        font-size: 1.7rem;
         font-weight: 900;
+        line-height: 30px;
+        margin-bottom: 2rem;
     }
     .Header{
         text-align: center;
+        flex-direction: column;
+        object-fit: contain;
+        background-size: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: 30rem  !important;
+        align-items: end !important;
+        display: grid !important;
     }
 }
 

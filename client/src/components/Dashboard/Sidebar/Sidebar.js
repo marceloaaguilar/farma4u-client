@@ -1,5 +1,5 @@
 import SidebarComponent from "./SidebarComponent";
-import { Home, CircleFadingPlus, Pill, LogOut} from "lucide-react";
+import { Home, Pill, LogOut} from "lucide-react";
 import { SidebarItem } from "./SidebarComponent";
 import { Link } from "react-router-dom";
 import swal from 'sweetalert';
@@ -26,7 +26,7 @@ export default function Sidebar({activeDirectory}){
       }).then((response)=>{
         if (response){
             cookies.remove("jwt_authorization");
-            const URLSite = localStorage.getItem('userData').urlSite != undefined ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite  : '' ;
+            const URLSite = localStorage.getItem('userData').urlSite !== undefined ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite  : '' ;
             localStorage.removeItem("userData");
             navigate(URLSite  + '/login');
         }
@@ -37,7 +37,7 @@ export default function Sidebar({activeDirectory}){
     <SidebarComponent>
 
         <Link to={"/dashboard"} style={{textDecoration: 'none'}}> 
-            <SidebarItem icon={<Home size={20}/>} text={"Página Inicial"}  active={activeDirectory == 'dashboard'? 'true' : 'false'}></SidebarItem>
+            <SidebarItem icon={<Home size={20}/>} text={"Página Inicial"}  active={activeDirectory === 'dashboard'? 'true' : 'false'}></SidebarItem>
         </Link>
 
         <Link to={"https://api.whatsapp.com/send?phone=21973975300"} target="_blank" style={{textDecoration: 'none'}}>
@@ -45,7 +45,7 @@ export default function Sidebar({activeDirectory}){
         </Link>
 
         <Link to={"/farmacias"} style={{textDecoration: 'none'}}>
-          <SidebarItem icon={<Pill size={20}/>} text={"Farmácias"} active={activeDirectory == 'farmacias'? 'true' : 'false'} ></SidebarItem>
+          <SidebarItem icon={<Pill size={20}/>} text={"Farmácias"} active={activeDirectory === 'farmacias'? 'true' : 'false'} ></SidebarItem>
         </Link>
 
         <div onClick={LogoutUser} style={{textDecoration: 'none'}}>

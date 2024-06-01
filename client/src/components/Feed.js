@@ -13,20 +13,16 @@ import { Typography } from '@mui/material';
 function Feed(){
     return (
       <div className='feed' style={{color: '#FFFFFF'}}>
+        <div className="Header" style={{background: "url('newFamiliy.jpg')", objectFit: 'cover', backgroundRepeat: 'no-repeat', justifyContent: 'center', backgroundSize: '100vw', backgroundPosition: '40% 60%', alignItems: 'end', display: 'flex'}}> 
+            <Col lg={6} sm={12} style={{color: '#FFFFFF', marginBottom: '2rem'}}>
+                <Typography id="title">CONHEÇA NOSSO CLUBE</Typography>
+                <Typography id="subtitle">Medicamentos com preços <br /> mais  acessíveis do Brasil!</Typography>
+            </Col>
+        </div>
         <Container>
-            <Row className="Header"> 
-                <Col lg={6} sm={12}>
-                    <Typography id="title">CLUBE FARMA FOR YOU</Typography>
-                    <Typography id="subtitle">Medicamentos <br /> com preços mais <br /> acessíveis do Brasil!</Typography>
-                </Col>
-                <Col >
-                    <Image className="familyImage" src={'family.png'} alt="Imagem de uma Família" />    
-                </Col>
-
-            </Row>
             <Row className="Header">
                 <Col lg={6} sm={12} >
-                    <Image className="casalIdosos" src={'casalIdosos.png'} alt="Imagem de uma Família" />    
+                    <Image className="img-fluid" style={{borderRadius: '20px'}} src={'family.png'} alt="Imagem de uma Família" />    
                 </Col>
                 <Col >
                     <Typography id='mission'>
