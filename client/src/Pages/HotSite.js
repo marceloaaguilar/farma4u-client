@@ -11,7 +11,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import  '../components/Navbar.css';
 import Button from 'react-bootstrap/Button';
-import ErrorPage from './ErrorPage';
+import {Helmet} from "react-helmet";
 
 
 
@@ -42,6 +42,14 @@ const Hotsite = () => {
   return data ? (
   <div className='App'>
     <div style={{ color: data.secondColor, backgroundColor: data.primaryColor}}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{data.urlSite.charAt(0).toUpperCase() + data.urlSite.slice(1)} - FARMA4U</title>
+        <meta property="og:title" content="Clube FARMA4U" />
+        <meta property="og:description" content="Medicamentos com preços mais acessíveis do Brasil." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={"%PUBLIC_URL%/" + data.image} />
+      </Helmet>
         <Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
             <Container>
               <Navbar.Brand className="navbarBrand">
