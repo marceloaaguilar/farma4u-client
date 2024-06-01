@@ -36,7 +36,7 @@ const Matriz = () => {
                     <div className="col-12 col-lg-5">
                         <div className="hero-content">
                             <p className="lead">Clube Farma For You</p>
-                            <h1 className="title-one">Medicamentos com preços mais acessível do Brasil. Economize muito mais comprando no noddo clube</h1>
+                            <h1 className="title-one">Medicamentos com preços mais acessíveis do Brasil. Economize muito mais comprando no nosso clube</h1>
                             <div className="space-md"></div>
                             <div className="space-md"></div>
                         </div>
