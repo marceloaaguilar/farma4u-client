@@ -67,8 +67,8 @@ const Matriz = () => {
         </div>
         <div style={{alignContent:'center', textAlign:'center'}}>
 
-            <div className="button" style={{alignContent: 'center', alignItems: 'center'}}>
-                <a href="#"><img src="btn-faleconosco.png" style={{marginTop:'30px', marginBottom: '30px'}}/> </a>
+            <div   className="button" style={{alignContent: 'center', alignItems: 'center'}}>
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=5521973975300&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais!"><img src="btn-faleconosco.png" style={{marginTop:'30px', marginBottom: '30px'}}/> </a>
             </div>
 
             <div className="hero-content" style={{textAlign: 'center'}} id="Planos">
