@@ -52,7 +52,7 @@ const Info = function({dadosClient}) {
     return (
         <div>
           <Container style={{marginTop: '4rem'}}>
-            <Button target="_blank" href="https://api.whatsapp.com/send?phone=5521973975300&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20Clube%20Farma4u!" style={btnFaleConsco}> Fale Conosco</Button>
+            <Button target="_blank" href="https://api.whatsapp.com/send?phone=5521973975300&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais!" style={btnFaleConsco}> Fale Conosco</Button>
             <Typography style={{color: dadosClient.primaryColor, fontWeight: 700, fontSize: '2rem', marginTop:'2rem'}}>Como Funciona?</Typography>
           </Container>
         <div className="cards mt-3">
