@@ -48,7 +48,7 @@ const Hotsite = () => {
         <meta property="og:title" content={data.urlSite.charAt(0).toUpperCase() + data.urlSite.slice(1) + " - FARMA4U"} />
         <meta property="og:description" content="Medicamentos com preços mais acessíveis do Brasil." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={data.image} />
+        <meta property="og:image" content={ data.image} />
       </Helmet>
         <Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
             <Container>
@@ -58,9 +58,7 @@ const Hotsite = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" style={{alignItems: 'center'}}>
-            <Nav.Link className='navLink' href="#home">Missão</Nav.Link>
-            <Nav.Link className='navLink' href="#link">Plano</Nav.Link>
-            <Nav.Link className='navLink' href="#link">Como Funciona</Nav.Link>
+            <Nav.Link className='navLink' href="#comoFunciona">Como Funciona</Nav.Link>
             <Nav.Link className='navLink' href="#link">
                 <Button
                   className='btnAssociado' 

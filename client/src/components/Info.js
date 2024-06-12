@@ -50,7 +50,7 @@ const Info = function({dadosClient}) {
     
 
     return (
-        <div>
+        <div id="comoFunciona"> 
           <Container style={{marginTop: '4rem'}}>
             <Button target="_blank" href="https://api.whatsapp.com/send?phone=5521973975300&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais!" style={btnFaleConsco}> Fale Conosco</Button>
             <Typography style={{color: dadosClient.primaryColor, fontWeight: 700, fontSize: '2rem', marginTop:'2rem'}}>Como Funciona?</Typography>
