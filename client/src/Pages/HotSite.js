@@ -51,9 +51,9 @@ const Hotsite = () => {
         <meta property="og:image" content={ data.image} />
       </Helmet>
         <Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
-            <Container>
+          <Container>
               <Navbar.Brand className="navbarBrand">
-                  <Image src={'Images/' + data.image} className='logoHotsite'/>
+                  <Image src={'Images/' + data.image} className='logoHotsite' style={{maxWidth: "14rem"}}/>
               </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -78,7 +78,7 @@ const Hotsite = () => {
             </Nav.Link>
             </Nav>
             </Navbar.Collapse>
-            </Container>
+          </Container>
         </Navbar>
     </div>
     <Feed/>
