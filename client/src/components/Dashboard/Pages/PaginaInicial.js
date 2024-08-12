@@ -35,26 +35,29 @@ export default function PaginaInicial(){
   },[]);
 
   async function processaDadosMember(){
+    
     try{
       await api.get(process.env.REACT_APP_BASE_URL_API + '/member/' + JSON.parse(localStorage.getItem('userData')).userId, {headers: {"Authorization" : `Bearer ${cookies.get("jwt_authorization")}` } }).then((response)=> {
+        
         if (response.status == 200){
           setMemberData(response.data.member);
-          response.data.member.orders.forEach(el => {
-            setMemberOrders([...orders, createData(new Date(el.createdAt).toLocaleDateString(), el.totalSavings, el.totalValue)])
-          })
+
+          const newOrders = response.data.member.orders.map(el => ({
+            data: new Date(el.createdAt).toLocaleDateString(),
+            valorEconomizado: el.totalSavings,
+            valorTotal: el.totalValue
+          }));
+    
+          setMemberOrders(prevOrders => [...prevOrders, ...newOrders]);
 
           return true;
         }})
+
     }catch(error){
       swal({text:'Você precisa se autenticar novamente. Redirecionando...', timer: 2000, buttons: false});
       navigate( JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite : '' + '/login');
       return false
     }
-  }
-
-
-  function createData(data, valorEconomizado, valorTotal) {
-    return { data, valorEconomizado, valorTotal };
   }
 
     return (
@@ -87,6 +90,7 @@ export default function PaginaInicial(){
             <p>Seu histórico de pedidos</p>
             <TableContainer component={Paper} className="mt-3">
               <Table sx={{ minWidth: 100 }} aria-label="simple table">
+
                 <TableHead>
                   <TableRow>
                     <TableCell>Data do Pedido</TableCell>
@@ -94,6 +98,7 @@ export default function PaginaInicial(){
                     <TableCell align="center">Valor Total</TableCell>
                   </TableRow>
                 </TableHead>
+
                 <TableBody>
                   {orders.map((row) => (
                     <TableRow
@@ -108,6 +113,7 @@ export default function PaginaInicial(){
                     </TableRow>
                   ))}
                 </TableBody>
+
               </Table>
             </TableContainer>
           </Col>
