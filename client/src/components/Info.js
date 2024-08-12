@@ -101,8 +101,8 @@ const Info = function({dadosClient}) {
                   <Card style={cardExplanation }>
                       <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/aperto-de-mao.png" />
                         <Card.Body>
-                          <Card.Title style={cardTitle}>Bem vindo ao Clube F4U</Card.Title>
-                          <Card.Text style={cardText}>Simples assim! Experimente agora mesmo e aproveite os benefícios de ser parte do Clube Farma For You!
+                          <Card.Title style={cardTitle}>Bem vindo ao Clube</Card.Title>
+                          <Card.Text style={cardText}>Simples assim! Experimente agora mesmo e aproveite os benefícios de ser parte do Clube!
                           </Card.Text>
                       </Card.Body>
                   </Card>
