@@ -61,7 +61,7 @@ export default function Farmacias(){
                     <Card.Img variant="top" style={{width: '100%', padding: '2rem 2rem 0.5rem 2rem', height: '10rem', objectFit: 'contain'}} src="/drogasil-logo.png" />
                   <Card.Body>
                     <Card.Title>Drogasil</Card.Title>
-                    <p style={{fontStyle : 'italic'}}>Em breve</p>
+                    <p style={{fontStyle : 'italic'}}>Aproveite os Descontos</p>
                   </Card.Body>
                 </Card>
               </Link>
