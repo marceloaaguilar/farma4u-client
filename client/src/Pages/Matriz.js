@@ -57,7 +57,7 @@ const Matriz = () => {
                     <Col xs={12} lg={5}>
                         <div className="hero-content" id="Missao">
 						    <h1 className="hero-title">Nossa missão é dar aquela força e cuidar de todo mundo! Oferecemos remédios a preço justo, de um jeito fácil, seguro e que todo mundo pode pagar.</h1>
-                            <p className="lead">A nossa missão é contribuir para a saúde e o bem-estar de todas as pessoas, proporcionando benefícios financeiros em seus cuidados médicos e simplificando suas rotinas diárias. O Clube Farma For You representa a solução que facilita o acesso a tratamentos de qualidade, promovendo uma comunidade mais saudável e feliz.</p>
+                            <p className="lead">Nosso compromisso é cuidar da saúde e bem-estar de todos, oferecendo benefícios financeiros nos tratamentos médicos e garantindo a comodidade na entrega de medicamentos. O Clube Farma For You proporciona agilidade, conveniência e preços acessíveis, tornando o acesso a cuidados de qualidade mais simples e prático, promovendo uma vida mais saudável e equilibrada.</p>
                         </div>
                     </Col>
                 </Row>

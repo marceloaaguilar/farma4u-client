@@ -35,13 +35,6 @@ function Feed(){
             </Row>
         </Container>
       </div>
-
-
-
-
     );
-
-
-    
 }
 export default Feed;

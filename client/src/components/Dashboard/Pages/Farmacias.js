@@ -70,7 +70,4 @@ export default function Farmacias(){
         </div>
       </div>
     )
-
-
-
 }

@@ -61,7 +61,7 @@ const Info = function({dadosClient}) {
                   <Card style={cardExplanation }>
                       <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/assinatura.png" />
                         <Card.Body>
-                          <Card.Title style={cardTitle}>Como Assinar</Card.Title>
+                          <Card.Title style={cardTitle}>Faça seu pedido</Card.Title>
                           <Card.Text style={cardText}>Faça o pedido pelo <br/>nosso número de <br/> Whatsapp
                           </Card.Text>
                       </Card.Body>
@@ -71,7 +71,7 @@ const Info = function({dadosClient}) {
                   <Card style={cardExplanation }>
                       <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/escrevendo.png" />
                         <Card.Body>
-                          <Card.Title style={cardTitle}>Cadastrar</Card.Title>
+                          <Card.Title style={cardTitle}>Atendimento</Card.Title>
                           <Card.Text style={cardText}>Um dos nossos <br/>atendentes irá  <br/> solicitar as <br/>informações <br/>necessárias.
                           </Card.Text>
                       </Card.Body>
