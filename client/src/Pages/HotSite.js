@@ -21,12 +21,12 @@ const Hotsite = () => {
   let navigate = useNavigate(); 
 
   const getHotsiteData = async () => {
-     api.get(`/${hotsite}`).then((res)=>{
-       setData(res.data);
-      }).catch((err) => {
-        console.log(err)
-        navigate('/404');
-      });
+    api.get(`/${hotsite}`).then((res)=>{
+      setData(res.data);
+    }).catch((err) => {
+      console.log(err)
+      navigate('/404');
+    });
   }
 
   useEffect(()=> {
@@ -81,7 +81,7 @@ const Hotsite = () => {
           </Container>
         </Navbar>
     </div>
-    <Feed/>
+    <Feed companyName={data.urlSite.charAt(0).toUpperCase() + data.urlSite.slice(1)}/>
     <Info dadosClient={{primaryColor: data.primaryColor, secondColor: data.secondColor}}/>
   </div>
   ): <p>Carregando...</p>

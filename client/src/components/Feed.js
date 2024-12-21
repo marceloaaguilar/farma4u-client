@@ -10,31 +10,43 @@ import '@fontsource/roboto/700.css';
 import { Typography } from '@mui/material';
 
 
-function Feed(){
-    return (
-      <div className='feed' style={{color: '#FFFFFF'}}>
-        <div className="Header" style={{background: "url('newFamiliy.jpg')", objectFit: 'cover', backgroundRepeat: 'no-repeat', justifyContent: 'center', backgroundSize: '100vw', backgroundPosition: '40% 60%', alignItems: 'end', display: 'flex'}}> 
-            <Col lg={6} sm={12} style={{color: '#FFFFFF', marginBottom: '2rem'}}>
-                <Typography id="title">CONHEÇA NOSSO CLUBE</Typography>
-                <Typography id="subtitle">Medicamentos com preços <br /> mais  acessíveis do Brasil!</Typography>
-            </Col>
+function Feed({companyName}){
+
+  const stylesText = {
+    textAlign: 'left',
+    margin: '2rem 0rem'
+  }
+
+
+  return (
+    <div className='feed' style={{color: '#FFFFFF'}}>
+      <div id="boxHeader">
+        <div id='titles'>
+            <Typography id="title">Clube {companyName}</Typography>
+            <Typography id="subtitle">Cuidar de você é o nosso compromisso!</Typography>
         </div>
-        <Container>
-            <Row className="Header">
-                <Col lg={6} sm={12} >
-                    <Image className="img-fluid" style={{borderRadius: '20px'}} src={'family.png'} alt="Imagem de uma Família" />    
-                </Col>
-                <Col >
-                    <Typography id='mission'>
-                        Nossa missão é dar aquela força e cuidar de todo mundo! Oferecemos remédios a preço justo, de um jeito fácil, seguro e que todo mundo pode pagar.
-                    </Typography>
-                    <Typography id='missionDescription'>
-                        A nossa missão é contribuir para a saúde e o bem-estar de todas as pessoas, proporcionando benefícios financeiros em seus cuidados médicos e simplificando suas rotinas diárias. O Clube representa a solução que facilita o acesso a tratamentos de qualidade, promovendo uma comunidade mais saudável e feliz.
-                    </Typography>
-                </Col>
-            </Row>
-        </Container>
       </div>
-    );
+
+      <Container>
+        <Row className="Header">
+          <Col lg={6} sm={12} >
+              <Image className="img-fluid" style={{borderRadius: '20px'}} src={'family.png'} alt="Imagem de uma Família" />    
+          </Col>
+          <Col >
+            <div style={stylesText}>
+              <h3 style={{fontSize: '2rem'}}>Qual é a nossa missão?</h3>
+              <p style={{fontSize: '1.2rem'}}> A nossa missão é contribuir para a saúde e o bem-estar de todas as pessoas, proporcionando benefícios financeiros em seus cuidados médicos e simplificando suas rotinas diárias.</p>
+            </div>
+
+            <div style={stylesText}>
+              <h3 style={{fontSize: '2rem'}}>O que o clube representa?</h3>
+              <p style={{fontSize: '1.2rem'}}>O Clube representa a solução que facilita o acesso a tratamentos de qualidade, promovendo uma comunidade mais saudável e feliz.</p>
+            </div>
+
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 }
 export default Feed;

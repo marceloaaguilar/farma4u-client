@@ -1,45 +1,51 @@
 
 
 .feed {
-    background-size: cover;
-    background-repeat: no-repeat;
     color: black !important;
-}
-.familyImage{
-    width: 100%;
+    overflow-x: hidden;
 }
 
-.casalIdosos{
-    width: 100%;
-}
 #title{
-    font-size: 1.5rem;
-    font-weight: 300;
-}
+    font-size: 2.5rem;
+    font-weight: 500;
+}   
 
 #subtitle{
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 3.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .Header{
     padding: 2rem;
     align-items: center;
     text-align: left;
-    min-height: 40rem;
+    height: 100%;
+    object-fit: cover;
 }
 
-#mission{
-    font-size: 2rem;
-    font-weight: 500;
+
+#boxHeader {
+    position: relative;
+    background-image: url("/public/fotoHeader.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: calc(100vw * (602 / 1915));
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
 }
 
-#missionDescription{
-    margin-top: 2rem;
-    font-size: 1.2rem;
+#titles{
+    margin-bottom: 2rem;
+    text-align: left;
 }
-
 
 @media screen and (max-width: 768px) {
 

@@ -1,120 +1,179 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import './Info.css';
 import { Typography } from '@mui/material';
 
-const Info = function({dadosClient}) {
-    const btnFaleConsco = {
+const Info = function({dadosClient: {primaryColor, secondColor}}) {
+
+    const btnFaleConosco  = {
         marginBottom: '2rem',
         padding: '10px 5rem 10px 5rem',
-        color: dadosClient.secondColor,
-        border: `1px solid ${dadosClient.secondColor}`,
+        color: secondColor,
+        border: `1px solid ${secondColor}`,
         borderRadius: '40px',
         fontSize: '22px',
         cursor: 'pointer',
-        backgroundColor: dadosClient.primaryColor,
+        backgroundColor: primaryColor,
         fontWeight: 900,
     };
 
-    const cardExplanation = {
-        width: '100%' , 
-        height: '100%',
-        background: dadosClient.primaryColor,
-        borderRadius: '50px',
-        alignItens: 'center',
-        display: 'flex',
-        color: dadosClient.secondColor
-        
-    }
 
     const cardTitle = {
-        backgroundColor: dadosClient.secondColor, 
-        padding: '0.5rem', 
-        borderRadius: '1rem', 
-        color: dadosClient.primaryColor,
-        fontWeight: '700',
-        boxShadow: '0px 3px 10px rgba(0, 0, 0, 0.5)',
-        marginBottom: '1rem'
-        
+      color: '#FFFFFF',
+      fontWeight: 600,
+      textAlign: 'left'
     }
 
-    const cardText = {
-        color: '#ffffff', 
-        fontWeight: '700',
-        lineHeight: '20px',
-        fontSize: '1.1rem'
+    const cardDescription = {
+      color: '#FFFFFF',
+      textAlign: 'left',
+      lineHeight: '20px',
+      marginTop: '0.2rem'
+    }
+
+
+  
+    const iconStyle = {
+        width: '3rem',
+        height: '100%',
+        objectFit: 'contain',
+    }
+
+    const cardStyle = {
+      maxWidth: '370px',
+      backgroundColor: primaryColor,
+      borderRadius: '20px',
+      height: '8rem',
+      display: 'flex',
+      alignItems: 'center'
+    }
+
+    const cardColumnStyle = {
+      display: 'flex',
+      justifyContent: 'center',
     }
     
 
     return (
-        <div id="comoFunciona"> 
-          <Container style={{marginTop: '4rem'}}>
-            <Button target="_blank" href="https://api.whatsapp.com/send?phone=5521973975300&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais!" style={btnFaleConsco}> Fale Conosco</Button>
-            <Typography style={{color: dadosClient.primaryColor, fontWeight: 700, fontSize: '2rem', marginTop:'2rem'}}>Como Funciona?</Typography>
-          </Container>
-        <div className="cards mt-3">
-          <Row className="rowCards mb-5">
-              <Col> 
-                  <Card style={cardExplanation }>
-                      <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/assinatura.png" />
-                        <Card.Body>
-                          <Card.Title style={cardTitle}>Faça seu pedido</Card.Title>
-                          <Card.Text style={cardText}>Faça o pedido pelo <br/>nosso número de <br/> Whatsapp
-                          </Card.Text>
-                      </Card.Body>
-                  </Card>
-              </Col>
-              <Col>
-                  <Card style={cardExplanation }>
-                      <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/escrevendo.png" />
-                        <Card.Body>
-                          <Card.Title style={cardTitle}>Atendimento</Card.Title>
-                          <Card.Text style={cardText}>Um dos nossos <br/>atendentes irá  <br/> solicitar as <br/>informações <br/>necessárias.
-                          </Card.Text>
-                      </Card.Body>
-                  </Card>
-              </Col>
-              <Col>
-                  <Card style={cardExplanation }>
-                      <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/dinheiro.png" />
-                        <Card.Body>
-                          <Card.Title style={cardTitle}>Link de pagamento</Card.Title>
-                          <Card.Text style={cardText}>Faça o pedido pelo <br/>nosso número de <br/> Whatsapp
-                          </Card.Text>
-                      </Card.Body>
-                  </Card>
-              </Col>
-              <Col>
-                  <Card style={cardExplanation }>
-                      <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/ciclo.png" />
-                        <Card.Body>
-                          <Card.Title style={cardTitle}>Pedido de medicamento</Card.Title>
-                          <Card.Text style={cardText}>Após a aprovação do pagamento, o medicamento será solicitado, separado e enviado ao endereço informado.
-                          </Card.Text>
-                      </Card.Body>
-                  </Card>
-              </Col>
-              <Col>
-                  <Card style={cardExplanation }>
-                      <Card.Img className={'mx-auto'} style={{width: '4rem', marginTop: '1rem'}} src="icons/aperto-de-mao.png" />
-                        <Card.Body>
-                          <Card.Title style={cardTitle}>Bem vindo ao Clube</Card.Title>
-                          <Card.Text style={cardText}>Simples assim! Experimente agora mesmo e aproveite os benefícios de ser parte do Clube!
-                          </Card.Text>
-                      </Card.Body>
-                  </Card>
-              </Col>
-          </Row>
-            </div>
-            <Container>
-                <div className='footer' style={{margin: '2rem'}}>
-                  <p>Medicamentos com preços mais acessível do Brasil! <br/> copyright ©2024 Farma For You.</p>
+      <div id="comoFunciona">
+        
+        <Container style={{marginTop: '4rem'}}>
+          <Typography style={{color: primaryColor, fontWeight: 700, fontSize: '2rem', marginTop:'2rem'}}>Veja como é simples:</Typography>
+        </Container>
+        
+        <div className='max-w-full'>
+          <div className='row d-flex justify-content-center gap-lg-4'>
+
+            <div className="mt-3 h-60" style={cardStyle}>
+              <div className="row">
+                <div class="col-lg-4 col-2" style={cardColumnStyle} >
+                  <img style={iconStyle} src='icons/assinatura.png'/>
                 </div>
-            </Container>
+                  
+                <div className='col-lg-8 col-10'>
+                  <div className='card-body'>
+                    <h5 className='card-title' style={cardTitle}>Como assinar?</h5>
+                    <p className='card-text' style={cardDescription}>Faça o pedido pelo nosso número de Whatsapp</p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div className="mt-3" style={cardStyle}>
+              <div className="row">
+                <div class="col-lg-4 col-2" style={{borderRadius: '60px'}} >
+                  <img style={iconStyle} src='icons/escrevendo.png'/>
+                </div>
+                  
+                <div className='col-lg-8 col-10'>
+                  <div className='card-body'>
+                    <h5 className='card-title' style={cardTitle}>Atendimento</h5>
+                    <p className='card-text' style={cardDescription}>Um de nossos atendentes irá atendê-lo</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div className="mt-3" style={cardStyle}>
+              <div className="row py-2">
+                <div class="col-lg-4 col-2" style={{borderRadius: '60px'}} >
+                  <img style={iconStyle} src='icons/dinheiro.png'/>
+                </div>
+                  
+                <div className='col-lg-8 col-10'>
+                  <div className='card-body'>
+                    <h5 className='card-title' style={cardTitle}>Link de pagamento</h5>
+                    <p className='card-text' style={cardDescription}>Faça o pagamento pelo link enviado pelo Whatsapp</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div className='row d-flex justify-content-center gap-lg-4'>
+
+            <div className="mt-3" style={cardStyle}>
+              <div className="row py-2">
+                <div class="col-lg-4 col-2" style={cardColumnStyle} >
+                  <img style={iconStyle} src='icons/ciclo.png'/>
+                </div>
+                  
+                <div className='col-lg-8 col-10'>
+                  <div className='card-body'>
+                    <h5 className='card-title' style={cardTitle}>Pedido de medicamento</h5>
+                    <p className='card-text' style={cardDescription}>O medicamento será enviado ao endereço informado</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div className="mt-3" style={cardStyle}>
+              <div className="row py-2">
+                <div class="col-lg-4 col-2" style={{borderRadius: '60px'}} >
+                  <img style={iconStyle} src='icons/escrevendo.png'/>
+                </div>
+                  
+                <div className='col-lg-8 col-10'>
+                  <div className='card-body'>
+                    <h5 className='card-title' style={cardTitle}>Bem vindo ao clube!</h5>
+                    <p className='card-text' style={cardDescription}>Experimente e aproveite os benefícios!</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+     
+        <Container style={{ marginTop: '4rem', padding: '2rem', borderRadius: '10px', backgroundColor: '#f9f9f9' }}>
+          <Typography variant="h4" gutterBottom>
+            Entre em Contato
+          </Typography>
+      
+          <Typography variant="body1" style={{ marginBottom: '1.5rem' }}>
+            Precisa de mais informações? Fale conosco pelo WhatsApp:
+          </Typography>
+
+          <Button 
+            target="_blank" 
+            href="https://api.whatsapp.com/send?phone=5521973975300&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais!" 
+            style={btnFaleConosco}
+          >
+            Fale Conosco pelo WhatsApp
+          </Button>
+        </Container>
+
+        <Container>
+          <div className='footer' style={{margin: '2rem'}}>
+            <p>Medicamentos com preços mais acessível do Brasil! <br/> copyright ©2024 Farma For You.</p>
+          </div>
+        </Container>
+      </div>
     )
 
 }
