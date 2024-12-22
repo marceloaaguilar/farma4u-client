@@ -1,0 +1,12 @@
+.rowCards{
+    display: flex;
+    padding: 0px 60px 0px 60px;
+    margin-bottom: 2rem;
+    margin: 0;
+    width: 100%;
+}
+.cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

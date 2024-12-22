@@ -1,0 +1,75 @@
+
+
+.feed {
+    color: black !important;
+    overflow-x: hidden;
+}
+
+#title{
+    font-size: 2.5rem;
+    font-weight: 500;
+}   
+
+#subtitle{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.Header{
+    padding: 2rem;
+    align-items: center;
+    text-align: left;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#boxHeader {
+    position: relative;
+    background-image: url("/public/fotoHeader.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: calc(100vw * (602 / 1915));
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+}
+
+#titles{
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+
+    #title{
+        padding-top: 1rem;
+    }
+    #subtitle{
+        font-size: 1.7rem;
+        font-weight: 900;
+        line-height: 30px;
+        margin-bottom: 2rem;
+    }
+    .Header{
+        text-align: center;
+        flex-direction: column;
+        object-fit: contain;
+        background-size: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: 30rem  !important;
+        align-items: end !important;
+        display: grid !important;
+    }
+}
+
+    
+    
