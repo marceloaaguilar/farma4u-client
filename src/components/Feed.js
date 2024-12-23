@@ -23,12 +23,12 @@ function Feed({companyName}){
       <div id="boxHeader">
         <div id='titles'>
             <Typography id="title">Clube {companyName}</Typography>
-            <Typography id="subtitle">Cuidar de você é o nosso compromisso!</Typography>
+            <Typography id="subtitle">O seu medicamento de forma ágil e prática em um só lugar.</Typography>
         </div>
       </div>
 
       <Container>
-        <Row className="Header">
+        <Row  style={{alignItems: 'center'}}>
           <Col lg={6} sm={12} >
               <Image className="img-fluid" style={{borderRadius: '20px'}} src={'family.png'} alt="Imagem de uma Família" />    
           </Col>

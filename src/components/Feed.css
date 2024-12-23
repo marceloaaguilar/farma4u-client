@@ -47,27 +47,16 @@
     text-align: left;
 }
 
+
 @media screen and (max-width: 768px) {
 
-    #title{
-        padding-top: 1rem;
+    #boxHeader{
+        height: 40vh;
+        background-size: cover;
     }
-    #subtitle{
-        font-size: 1.7rem;
-        font-weight: 900;
-        line-height: 30px;
-        margin-bottom: 2rem;
-    }
-    .Header{
+
+    #titles{
         text-align: center;
-        flex-direction: column;
-        object-fit: contain;
-        background-size: 100vh !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        min-height: 30rem  !important;
-        align-items: end !important;
-        display: grid !important;
     }
 }
 
