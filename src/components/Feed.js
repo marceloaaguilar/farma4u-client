@@ -35,7 +35,7 @@ function Feed({companyName}){
           <Col >
             <div style={stylesText}>
               <h3 style={{fontSize: '2rem'}}>Qual é a nossa missão?</h3>
-              <p style={{fontSize: '1.2rem'}}> A nossa missão é contribuir para a saúde e o bem-estar de todas as pessoas, proporcionando benefícios financeiros em seus cuidados médicos e simplificando suas rotinas diárias.</p>
+              <p style={{fontSize: '1.2rem'}}> A nossa missão é contribuir para a saúde e o bem-estar de todas as pessoas, proporcionando economia na compra de medicamentos simplificando suas rotinas diárias.</p>
             </div>
 
             <div style={stylesText}>
