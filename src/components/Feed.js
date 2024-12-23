@@ -40,7 +40,7 @@ function Feed({companyName}){
 
             <div style={stylesText}>
               <h3 style={{fontSize: '2rem'}}>O que o clube representa?</h3>
-              <p style={{fontSize: '1.2rem'}}>O Clube representa a solução que facilita o acesso a tratamentos de qualidade, promovendo uma comunidade mais saudável e feliz.</p>
+              <p style={{fontSize: '1.2rem'}}>O Clube representa a solução que facilita a compra, entrega e o acesso a tratamentos de qualidade, promovendo uma comunidade mais saudável e feliz.</p>
             </div>
 
           </Col>
