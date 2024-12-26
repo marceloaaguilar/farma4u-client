@@ -72,7 +72,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
                   
                 <div className='col-lg-8 col-10'>
                   <div className='card-body'>
-                    <h5 className='card-title' style={cardTitle}>Como assinar?</h5>
+                    <h5 className='card-title' style={cardTitle}>Como Comprar?</h5>
                     <p className='card-text' style={cardDescription}>Faça o pedido pelo nosso número de Whatsapp</p>
                   </div>
                 </div>
@@ -139,8 +139,8 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
                   
                 <div className='col-lg-8 col-10'>
                   <div className='card-body'>
-                    <h5 className='card-title' style={cardTitle}>Bem vindo ao clube!</h5>
-                    <p className='card-text' style={cardDescription}>Experimente e aproveite os benefícios!</p>
+                    <h5 className='card-title' style={cardTitle}>Pedido Entregue</h5>
+                    <p className='card-text' style={cardDescription}>Estaremos sempre a disposição para te auxiliar nas compras de medicamento</p>
                   </div>
                 </div>
 
@@ -156,7 +156,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
           </Typography>
       
           <Typography variant="body1" style={{ marginBottom: '1.5rem' }}>
-            Precisa de mais informações? Fale conosco pelo WhatsApp:
+            Precisando comprar medicamentos?
           </Typography>
 
           <Button 
