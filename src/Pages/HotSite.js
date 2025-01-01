@@ -14,12 +14,11 @@ import Button from 'react-bootstrap/Button';
 import {Helmet} from "react-helmet";
 
 
-
 const Hotsite = () => {
   const [data, setData] = useState('');
   const {hotsite} = useParams();
   let navigate = useNavigate(); 
-
+  
   const getHotsiteData = async () => {
     api.get(`/${hotsite}`).then((res)=>{
       setData(res.data);
@@ -53,7 +52,7 @@ const Hotsite = () => {
         <Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
           <Container>
               <Navbar.Brand className="navbarBrand">
-                  <Image src={'Images/' + data.image} className='logoHotsite' style={{maxWidth: "14rem"}}/>
+                  <Image src={process.env.REACT_APP_BASE_URL_HOTSITE + "/" + data.image} className='logoHotsite' style={{maxWidth: "14rem"}}/>
               </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
