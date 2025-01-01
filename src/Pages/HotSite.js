@@ -29,7 +29,7 @@ const Hotsite = () => {
   }
 
   useEffect(()=> {
-    getHotsiteData();
+    getHotsiteData(); 
   },[]);
 
 
@@ -52,7 +52,7 @@ const Hotsite = () => {
         <Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
           <Container>
               <Navbar.Brand className="navbarBrand">
-                  <Image src={process.env.REACT_APP_BASE_URL_HOTSITE + "/" + data.image} className='logoHotsite' style={{maxWidth: "14rem"}}/>
+                <Image src={process.env.REACT_APP_BASE_URL_HOTSITE_API + "/images/" + data.image} className='logoHotsite' style={{maxWidth: "14rem"}}/>
               </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
