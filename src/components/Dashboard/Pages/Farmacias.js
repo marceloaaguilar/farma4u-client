@@ -239,7 +239,7 @@ export default function Farmacias(){
                       height: '10rem',
                       objectFit: 'contain',
                     }}
-                    src="/extraFarma.png"
+                    src="/extrafarma.png"
                   />
                   <Card.Body style={{ flex: 1 }}>
                     <Card.Title>Extrafarma</Card.Title>
