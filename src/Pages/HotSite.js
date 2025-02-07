@@ -85,7 +85,8 @@ const Hotsite = () => {
     <Feed companyName={data.urlSite.charAt(0).toUpperCase() + data.urlSite.slice(1)}/>
     <Info dadosClient={{primaryColor: data.primaryColor, secondColor: data.secondColor}}/>
   </div>
-  ): <p>Carregando...</p>
+  ): 
+  <p>Carregando...</p>
 
 }
 
