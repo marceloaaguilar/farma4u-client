@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/esm/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import Modal from 'react-bootstrap/Modal';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 import Cookies from "universal-cookie";
 
 export default function Login(){
@@ -24,6 +24,7 @@ export default function Login(){
   const [newPassword, setNewPassword] = useState('');
   const navigate = useNavigate(); 
   const cookies = new Cookies();
+  const [typeModal, setTypeModal] = useState("");
 	
 	useEffect(() => {
 		api.get(`/${hotsite}`).then((res)=>{
@@ -47,7 +48,12 @@ export default function Login(){
     e.preventDefault();
 
     if (cpfPrimeiroAcesso.length != 11){
-      swal("Atenção!", "O CPF deve possuir 11 caracteres!", "error");
+      swal.fire({
+        title: "Atenção", 
+        text: "O código possui 6 caracteres!", 
+        icon: "error",
+        confirmButtonText: 'Continuar'
+      });
       return false;
     }
 		const objFirstAccess = {
@@ -61,7 +67,12 @@ export default function Login(){
         }
       })
       .catch((error) =>{
-        swal("Erro", error.response.data.message, "error");
+        swal.fire({
+          title: "Erro", 
+          text: error.response.data.message, 
+          icon: "error",
+          confirmButtonText: 'Continuar'
+        });
         return false
     });
   }
@@ -70,7 +81,12 @@ export default function Login(){
     e.preventDefault();
 
     if(codigoConfirmacao.length != 6){
-      swal("Atenção!", "O código possui 6 caracteres!", "error");
+       swal.fire({
+        title: "Atenção", 
+        text: "O código possui 6 caracteres!", 
+        icon: "error",
+        confirmButtonText: 'Continuar'
+      });
       return false;
     }
 
@@ -84,7 +100,13 @@ export default function Login(){
 
       await api.post(process.env.REACT_APP_BASE_URL_API + '/auth/member-first-password', objPassword).then((response)=> {
         if (response.status == 201){
-          swal("Cadastro realizado!", "Seu cadastro foi feito com sucesso.", "success");
+
+          swal.fire({
+            title: "Cadastro realizado!", 
+            text: "Seu cadastro foi feito com sucesso.", 
+            icon: "success",
+          });
+                  
           ShowModalFirstAccess(false);
           showFormCPF(true);
           showFormCode(false);
@@ -102,7 +124,13 @@ export default function Login(){
     e.preventDefault();
 
     if (cpf.length != 11){
-      swal("Atenção!", "O CPF deve possuir 11 caracteres!", "error");
+      swal.fire({
+        title: "Atenção", 
+        text: "O CPF deve possuir 11 caracteres!", 
+        icon: "error",
+        confirmButtonText: 'Continuar'
+      });
+
       return false;
     }
 
@@ -117,7 +145,7 @@ export default function Login(){
         var date = new Date();
         date.setHours(date.getHours() + 2);
         cookies.remove("jwt_authorization");
-        swal({text:'Login realizado. Redirecionando...', timer: 3000, buttons: false});
+        swal.fire({text:'Login realizado. Redirecionando...', timer: 3000, buttons: false});
         cookies.set("jwt_authorization", tokenLogin, {
           expires:  date
         });
@@ -126,15 +154,21 @@ export default function Login(){
       }
     })
     .catch((error) =>{
-      swal("Erro", error.response.data.message, "error");
+      swal.fire("Erro", error.response.data.message, "error");
       return false
     });
 
   }
 
+  const handleShowFormResetPassword = () => {
+    setTypeModal("resetPassword");
+    ShowModalFirstAccess(true);
+  }
+
 	if (data != null && data != ''){
 		return(
 			<div style={{color: data.primaryColor, backgroundColor: data.secondColor, height: '150vh'}}>
+
 				<Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
 					<Container style={{justifyContent: 'center'}}>
 						<Navbar.Brand className="navbarBrand">
@@ -142,39 +176,49 @@ export default function Login(){
 						</Navbar.Brand>
 					</Container>
 				</Navbar>
+
 				<div>
-					<Container style={{marginTop: '4rem', justifyContent: 'center', display: 'flex'}}>
+
+					<Container style={{marginTop: '4rem', justifyContent: 'center', display: 'flex', overflowY: 'hidden'}}>
 						<div style={{justifyContent: 'center', border: '1px solid', padding: '4rem', borderRadius: '20px', borderColor: '#CCD0D5'}}>
 							<h3 style={{marginBottom: '2rem'}}>Acesso à área do Associado</h3>
 							<Form >
+
 								<Form.Group className="mb-3" controlId="formBasicEmail">
 									<Form.Label>Digite seu CPF</Form.Label>
 									<Form.Control type="text" name="CPF"  onChange={e => setCPF(e.target.value)} value={cpf} placeholder="Digite seu CPF" maxLength={11} />
 								</Form.Group>
+
 								<Form.Group className="mb-3" controlId="formBasicPassword">
 									<Form.Label>Senha</Form.Label>
 									<Form.Control type="password" name="password"  onChange={e => setPassword(e.target.value)} value={password} placeholder="Senha" />
 								</Form.Group>
+
+                <p onClick={handleShowFormResetPassword} style={{marginBottom: '1rem', cursor: 'pointer'}}>Redefinir senha</p>
+
 								<Button type="submit" onClick={handleLogin} style={{backgroundColor: data.primaryColor, color: data.secondColor, marginRight: '1rem', marginTop: '1rem', border: 'none'}}>
 									Realizar Login
 								</Button>
+
 								<Button onClick={handleShow} style={{background: 'none', borderColor: data.primaryColor, color: data.primaryColor, marginTop: '1rem'}}>
 									Primeiro Acesso
 								</Button>
+
 							</Form>
 						</div>
 					</Container>
+
 				</div>
 
 				<Modal show={modalFirstAccess} onHide={handleClose}>
-        	<Modal.Header closeButton>
-          	<Modal.Title>Primeiro Acesso</Modal.Title>
-       	 	</Modal.Header>
+          <Modal.Header closeButton>
+            <Modal.Title>{typeModal === "firstAccess" ? "Primeiro Acesso" : "Redefinir senha"} </Modal.Title>
+          </Modal.Header>
           {formCPF ? <>
             <Modal.Body>
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Digite seu CPF para o primeiro acesso</Form.Label>
+                  <Form.Label> Digite seu CPF para {typeModal === "firstAccess" ? "o primeiro acesso" : "redefinir sua senha"} </Form.Label>
                   <Form.Control type="email" name="cpfPrimeiroAcesso"  onChange={e => setcpfPrimeiroAcesso(e.target.value)} value={cpfPrimeiroAcesso} placeholder="Digite seu CPF" />
                 </Form.Group>
               </Form>
@@ -211,16 +255,11 @@ export default function Login(){
             </>: null}
         </Modal>
 			</div>
-
-
 		)
 	}
 
 	return(
     <p>Carregando...</p>
 	)
-			
-		
-      
 
 }

@@ -2,16 +2,18 @@
 
 *{
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
+  overflow-X: hidden;
 }
 .App {
   text-align: center;
 }
-
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.swal2-icon{
+  overflow-y: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {

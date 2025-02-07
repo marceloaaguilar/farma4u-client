@@ -2,7 +2,7 @@ import SidebarComponent from "./SidebarComponent";
 import { Home, Pill, LogOut} from "lucide-react";
 import { SidebarItem } from "./SidebarComponent";
 import { Link } from "react-router-dom";
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import Cookies from "universal-cookie";
 import {useNavigate} from 'react-router-dom';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -15,16 +15,14 @@ export default function Sidebar({activeDirectory}){
 
   const LogoutUser = () => {
 
-    swal({
+    Swal.fire({
         title: "Deseja realmente sair?",
         icon: "warning",
-        buttons: [
-          'Não',
-          'Sim'
-        ],
-        dangerMode: true,
+        showDenyButton: true,
+        confirmButtonText: "Sim",
+        denyButtonText: `Não`,
       }).then((response)=>{
-        if (response){
+        if (response.isConfirmed){
             cookies.remove("jwt_authorization");
             const URLSite = localStorage.getItem('userData').urlSite !== undefined ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite  : '' ;
             localStorage.removeItem("userData");
