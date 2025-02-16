@@ -14,7 +14,7 @@ const Matriz = () => {
     height: "8rem",
     display: "flex",
     alignItems: "center",
-    background: "linear-gradient(90deg, rgba(18,153,195,1) 35%, rgba(255,91,214,1) 100%);"
+    background: "linear-gradient(90deg, rgba(18,153,195,1) 35%, rgba(255,91,214,1) 100%)"
   };
 
   const iconStyle = {
