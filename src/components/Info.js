@@ -34,9 +34,9 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
   
     const iconStyle = {
-        width: '3rem',
-        height: '100%',
-        objectFit: 'contain',
+      width: '3rem',
+      height: '100%',
+      objectFit: 'contain',
     }
 
     const cardStyle = {

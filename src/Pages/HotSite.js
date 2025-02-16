@@ -49,6 +49,7 @@ const Hotsite = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ data.image} />
       </Helmet>
+
         <Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
           <Container>
               <Navbar.Brand className="navbarBrand">
@@ -79,11 +80,13 @@ const Hotsite = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+
     </div>
     <Feed companyName={data.urlSite.charAt(0).toUpperCase() + data.urlSite.slice(1)}/>
     <Info dadosClient={{primaryColor: data.primaryColor, secondColor: data.secondColor}}/>
   </div>
-  ): <p>Carregando...</p>
+  ): 
+  <p>Carregando...</p>
 
 }
 

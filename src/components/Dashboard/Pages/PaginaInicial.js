@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 import { api } from "../../../utils/axios";
 import Cookies from "universal-cookie";
 import {useNavigate} from 'react-router-dom';
@@ -28,7 +28,7 @@ export default function PaginaInicial(){
 
   useEffect(()=> {
     if (localStorage.getItem('userData') == null || localStorage.getItem('userData') == undefined){
-        swal({text:'Você precisa se autenticar primeiro..', timer: 3000, buttons: false});
+        swal.fire({text:'Você precisa se autenticar primeiro..', timer: 3000, buttons: false});
         return false
     }
     processaDadosMember();
@@ -54,7 +54,7 @@ export default function PaginaInicial(){
         }})
 
     }catch(error){
-      swal({text:'Você precisa se autenticar novamente. Redirecionando...', timer: 2000, buttons: false});
+      swal.fire({text:'Você precisa se autenticar novamente. Redirecionando...', timer: 2000, buttons: false});
       navigate( JSON.parse(localStorage.getItem('userData')).urlSite != undefined  ?  + '/' + JSON.parse(localStorage.getItem('userData')).urlSite : '' + '/login');
       return false
     }

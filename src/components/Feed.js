@@ -16,8 +16,6 @@ function Feed({companyName}){
     textAlign: 'left',
     margin: '2rem 0rem'
   }
-
-
   return (
     <div className='feed' style={{color: '#FFFFFF'}}>
       <div id="boxHeader">
