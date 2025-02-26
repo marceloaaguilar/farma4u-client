@@ -35,11 +35,6 @@ export default function Login(){
 			  });
 		},[]);
     
-
-	const handleShow = (e) => {
-		ShowModalFirstAccess(true);
-	}
-
 	const handleClose = () => {
 		ShowModalFirstAccess(false);
 	}
@@ -161,7 +156,12 @@ export default function Login(){
   }
 
   const handleShowFormResetPassword = () => {
-    setTypeModal("resetPassword");
+    setTypeModal("passwordReset");
+    ShowModalFirstAccess(true);
+  }
+
+  const handleShowFormFirstAccess = () => {
+    setTypeModal("firstAccess");
     ShowModalFirstAccess(true);
   }
 
@@ -172,7 +172,7 @@ export default function Login(){
 				<Navbar expand="lg" className="navbar" style={{margin: "2rem 2rem"}}>
 					<Container style={{justifyContent: 'center'}}>
 						<Navbar.Brand className="navbarBrand">
-							<Image src={process.env.PUBLIC_URL + '/Images/' + data.image} className='logoHotsite'/>
+							<Image src={process.env.REACT_APP_BASE_URL_HOTSITE_API + "/images/" + data.image} className='logoHotsite'/>
 						</Navbar.Brand>
 					</Container>
 				</Navbar>
@@ -200,7 +200,7 @@ export default function Login(){
 									Realizar Login
 								</Button>
 
-								<Button onClick={handleShow} style={{background: 'none', borderColor: data.primaryColor, color: data.primaryColor, marginTop: '1rem'}}>
+								<Button onClick={handleShowFormFirstAccess} style={{background: 'none', borderColor: data.primaryColor, color: data.primaryColor, marginTop: '1rem'}}>
 									Primeiro Acesso
 								</Button>
 

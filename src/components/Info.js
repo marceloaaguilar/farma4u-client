@@ -66,7 +66,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3 h-60" style={cardStyle}>
               <div className="row">
-                <div class="col-lg-4 col-2" style={cardColumnStyle} >
+                <div className="col-lg-4 col-2" style={cardColumnStyle} >
                   <img style={iconStyle} src='icons/assinatura.png'/>
                 </div>
                   
@@ -81,7 +81,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row">
-                <div class="col-lg-4 col-2" style={{borderRadius: '60px'}} >
+                <div className="col-lg-4 col-2" style={{borderRadius: '60px'}} >
                   <img style={iconStyle} src='icons/escrevendo.png'/>
                 </div>
                   
@@ -97,7 +97,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div class="col-lg-4 col-2" style={{borderRadius: '60px'}} >
+                <div className="col-lg-4 col-2" style={{borderRadius: '60px'}} >
                   <img style={iconStyle} src='icons/dinheiro.png'/>
                 </div>
                   
@@ -117,7 +117,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div class="col-lg-4 col-2" style={cardColumnStyle} >
+                <div className="col-lg-4 col-2" style={cardColumnStyle} >
                   <img style={iconStyle} src='icons/ciclo.png'/>
                 </div>
                   
@@ -133,7 +133,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div class="col-lg-4 col-2" style={{borderRadius: '60px'}} >
+                <div className="col-lg-4 col-2" style={{borderRadius: '60px'}} >
                   <img style={iconStyle} src='icons/escrevendo.png'/>
                 </div>
                   

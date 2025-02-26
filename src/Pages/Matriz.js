@@ -161,7 +161,7 @@ const Matriz = () => {
 
         <a href="#">
           <img
-            class="box-assinatura-juridica"
+            className="box-assinatura-juridica"
             src="box-assinatura-juridica-g.jpg"
             alt="img-responsiva"
           />
@@ -177,7 +177,7 @@ const Matriz = () => {
           <div className="row d-flex justify-content-center gap-lg-4">
             <div className="mt-3 h-60" style={cardStyle}>
               <div className="row">
-                <div class="col-lg-4 col-2" style={cardColumnStyle}>
+                <div className="col-lg-4 col-2" style={cardColumnStyle}>
                   <img style={iconStyle} src="icons/assinatura.png" />
                 </div>
 
@@ -196,7 +196,7 @@ const Matriz = () => {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row">
-                <div class="col-lg-4 col-2" style={{ borderRadius: "60px" }}>
+                <div className="col-lg-4 col-2" style={{ borderRadius: "60px" }}>
                   <img style={iconStyle} src="icons/escrevendo.png" />
                 </div>
 
@@ -215,7 +215,7 @@ const Matriz = () => {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div class="col-lg-4 col-2" style={{ borderRadius: "60px" }}>
+                <div className="col-lg-4 col-2" style={{ borderRadius: "60px" }}>
                   <img style={iconStyle} src="icons/dinheiro.png" />
                 </div>
 
@@ -236,7 +236,7 @@ const Matriz = () => {
           <div className="row d-flex justify-content-center gap-lg-4">
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div class="col-lg-4 col-2" style={cardColumnStyle}>
+                <div className="col-lg-4 col-2" style={cardColumnStyle}>
                   <img style={iconStyle} src="icons/ciclo.png" />
                 </div>
 
@@ -255,7 +255,7 @@ const Matriz = () => {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div class="col-lg-4 col-2" style={{ borderRadius: "60px" }}>
+                <div className="col-lg-4 col-2" style={{ borderRadius: "60px" }}>
                   <img style={iconStyle} src="icons/escrevendo.png" />
                 </div>
 
