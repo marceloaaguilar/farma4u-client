@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import './Info.css';
 import { Typography } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping, faTruckFast, faFileSignature, faHandHoldingDollar, faArrowsSpin } from '@fortawesome/free-solid-svg-icons';
 
 const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
@@ -19,33 +21,34 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
 
     const cardTitle = {
-      color: '#FFFFFF',
+      color: primaryColor,
       fontWeight: 600,
       textAlign: 'left'
     }
 
     const cardDescription = {
-      color: '#FFFFFF',
+      color: primaryColor,
       textAlign: 'left',
       lineHeight: '20px',
       marginTop: '0.2rem'
     }
-
-
   
     const iconStyle = {
-      width: '3rem',
+      width: '3.2rem',
       height: '100%',
       objectFit: 'contain',
+      color: primaryColor
     }
 
     const cardStyle = {
       maxWidth: '370px',
-      backgroundColor: primaryColor,
+      backgroundColor: secondColor,
       borderRadius: '20px',
       height: '8rem',
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      boxShadow: "1px 3px 8px rgba(0, 0, 0, 0.4)",
+      marginBottom: "2rem"
     }
 
     const cardColumnStyle = {
@@ -58,7 +61,7 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
       <div id="comoFunciona">
         
         <Container style={{marginTop: '4rem'}}>
-          <Typography style={{color: primaryColor, fontWeight: 700, fontSize: '2rem', marginTop:'2rem'}}>Veja como é simples:</Typography>
+          <Typography style={{color: secondColor, fontWeight: 700, fontSize: '2rem', marginTop:'2rem'}}>Veja como é simples:</Typography>
         </Container>
         
         <div className='max-w-full'>
@@ -67,7 +70,8 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
             <div className="mt-3 h-60" style={cardStyle}>
               <div className="row">
                 <div className="col-lg-4 col-2" style={cardColumnStyle} >
-                  <img style={iconStyle} src='icons/assinatura.png'/>
+                <FontAwesomeIcon style={iconStyle} icon={faCartShopping} />
+                  {/* <img style={iconStyle} src='icons/assinatura.png'/> */}
                 </div>
                   
                 <div className='col-lg-8 col-10'>
@@ -81,8 +85,9 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row">
-                <div className="col-lg-4 col-2" style={{borderRadius: '60px'}} >
-                  <img style={iconStyle} src='icons/escrevendo.png'/>
+                <div className="col-lg-4 col-2" style={cardColumnStyle} >
+                  <FontAwesomeIcon  style={iconStyle} icon={faFileSignature} />
+                  {/* <img style={iconStyle} src='icons/escrevendo.png'/> */}
                 </div>
                   
                 <div className='col-lg-8 col-10'>
@@ -97,8 +102,9 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div className="col-lg-4 col-2" style={{borderRadius: '60px'}} >
-                  <img style={iconStyle} src='icons/dinheiro.png'/>
+                <div className="col-lg-4 col-2" style={cardColumnStyle} >
+                  <FontAwesomeIcon style={iconStyle} icon={faHandHoldingDollar} />
+                  {/* <img style={iconStyle} src='icons/dinheiro.png'/> */}
                 </div>
                   
                 <div className='col-lg-8 col-10'>
@@ -118,7 +124,8 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
                 <div className="col-lg-4 col-2" style={cardColumnStyle} >
-                  <img style={iconStyle} src='icons/ciclo.png'/>
+                  <FontAwesomeIcon style={iconStyle} icon={faArrowsSpin} />
+                  {/* <img style={iconStyle} src='icons/ciclo.png'/> */}
                 </div>
                   
                 <div className='col-lg-8 col-10'>
@@ -133,8 +140,9 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div className="col-lg-4 col-2" style={{borderRadius: '60px'}} >
-                  <img style={iconStyle} src='icons/escrevendo.png'/>
+                <div className="col-lg-4 col-2" style={cardColumnStyle} >
+                  <FontAwesomeIcon style={iconStyle} icon={faTruckFast} />
+                  {/* <img style={iconStyle} src='icons/escrevendo.png'/> */}
                 </div>
                   
                 <div className='col-lg-8 col-10'>
