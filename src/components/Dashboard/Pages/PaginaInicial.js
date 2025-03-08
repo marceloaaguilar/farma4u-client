@@ -34,18 +34,19 @@ export default function PaginaInicial(){
     processaDadosMember();
   },[]);
 
+
   async function processaDadosMember(){
     
     try{
       await api.get(process.env.REACT_APP_BASE_URL_API + '/member/' + JSON.parse(localStorage.getItem('userData')).userId, {headers: {"Authorization" : `Bearer ${cookies.get("jwt_authorization")}` } }).then((response)=> {
-        
         if (response.status == 200){
           setMemberData(response.data.member);
 
           const newOrders = response.data.member.orders.map(el => ({
             data: new Date(el.createdAt).toLocaleDateString(),
             valorEconomizado: el.totalSavings,
-            valorTotal: el.totalValue
+            valorTotal: el.totalValue,
+            items: el.items.map((item) => item.medicineName).join(", ")
           }));
     
           setMemberOrders(prevOrders => [...prevOrders, ...newOrders]);
@@ -94,6 +95,7 @@ export default function PaginaInicial(){
                 <TableHead>
                   <TableRow>
                     <TableCell>Data do Pedido</TableCell>
+                    <TableCell>Itens</TableCell>
                     <TableCell align="center">Economia Total</TableCell>
                     <TableCell align="center">Valor Total</TableCell>
                   </TableRow>
@@ -107,6 +109,9 @@ export default function PaginaInicial(){
                     >
                       <TableCell component="th" scope="row">
                         {row.data}
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {row.items}
                       </TableCell>
                       <TableCell align="center">R$ {row.valorEconomizado}</TableCell>
                       <TableCell align="center">R$ {row.valorTotal}</TableCell>
