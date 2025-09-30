@@ -69,15 +69,15 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3 h-60" style={cardStyle}>
               <div className="row">
-                <div className="col-lg-4 col-2" style={cardColumnStyle} >
-                <FontAwesomeIcon style={iconStyle} icon={faCartShopping} />
-                  {/* <img style={iconStyle} src='icons/assinatura.png'/> */}
+                <div className="col-lg-4 col-2" style={cardColumnStyle}>
+                  <FontAwesomeIcon style={iconStyle} icon={faCartShopping} />
                 </div>
-                  
                 <div className='col-lg-8 col-10'>
                   <div className='card-body'>
-                    <h5 className='card-title' style={cardTitle}>Como Comprar?</h5>
-                    <p className='card-text' style={cardDescription}>Faça o pedido pelo nosso número de Whatsapp</p>
+                    <h5 className='card-title' style={cardTitle}>1. Pedido</h5>
+                    <p className='card-text' style={cardDescription}>
+                      Solicite seus medicamentos pelo WhatsApp.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -85,35 +85,33 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row">
-                <div className="col-lg-4 col-2" style={cardColumnStyle} >
-                  <FontAwesomeIcon  style={iconStyle} icon={faFileSignature} />
-                  {/* <img style={iconStyle} src='icons/escrevendo.png'/> */}
+                <div className="col-lg-4 col-2" style={cardColumnStyle}>
+                  <FontAwesomeIcon style={iconStyle} icon={faFileSignature} />
                 </div>
-                  
                 <div className='col-lg-8 col-10'>
                   <div className='card-body'>
-                    <h5 className='card-title' style={cardTitle}>Atendimento</h5>
-                    <p className='card-text' style={cardDescription}>Um de nossos atendentes irá atendê-lo</p>
+                    <h5 className='card-title' style={cardTitle}>2. Atendimento</h5>
+                    <p className='card-text' style={cardDescription}>
+                      Um atendente confirma seus dados e pedido.
+                    </p>
                   </div>
                 </div>
-
               </div>
             </div>
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div className="col-lg-4 col-2" style={cardColumnStyle} >
+                <div className="col-lg-4 col-2" style={cardColumnStyle}>
                   <FontAwesomeIcon style={iconStyle} icon={faHandHoldingDollar} />
-                  {/* <img style={iconStyle} src='icons/dinheiro.png'/> */}
                 </div>
-                  
                 <div className='col-lg-8 col-10'>
                   <div className='card-body'>
-                    <h5 className='card-title' style={cardTitle}>Link de pagamento</h5>
-                    <p className='card-text' style={cardDescription}>Faça o pagamento pelo link enviado pelo Whatsapp</p>
+                    <h5 className='card-title' style={cardTitle}>3. Pagamento</h5>
+                    <p className='card-text' style={cardDescription}>
+                      Pague pelo link seguro enviado no WhatsApp.
+                    </p>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -123,35 +121,33 @@ const Info = function({dadosClient: {primaryColor, secondColor}}) {
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div className="col-lg-4 col-2" style={cardColumnStyle} >
+                <div className="col-lg-4 col-2" style={cardColumnStyle}>
                   <FontAwesomeIcon style={iconStyle} icon={faArrowsSpin} />
-                  {/* <img style={iconStyle} src='icons/ciclo.png'/> */}
                 </div>
-                  
                 <div className='col-lg-8 col-10'>
                   <div className='card-body'>
-                    <h5 className='card-title' style={cardTitle}>Pedido de medicamento</h5>
-                    <p className='card-text' style={cardDescription}>O medicamento será enviado ao endereço informado</p>
+                    <h5 className='card-title' style={cardTitle}>4. Processamento</h5>
+                    <p className='card-text' style={cardDescription}>
+                      Seu pedido é separado e preparado para envio.
+                    </p>
                   </div>
                 </div>
-
               </div>
             </div>
 
             <div className="mt-3" style={cardStyle}>
               <div className="row py-2">
-                <div className="col-lg-4 col-2" style={cardColumnStyle} >
+                <div className="col-lg-4 col-2" style={cardColumnStyle}>
                   <FontAwesomeIcon style={iconStyle} icon={faTruckFast} />
-                  {/* <img style={iconStyle} src='icons/escrevendo.png'/> */}
                 </div>
-                  
                 <div className='col-lg-8 col-10'>
                   <div className='card-body'>
-                    <h5 className='card-title' style={cardTitle}>Pedido Entregue</h5>
-                    <p className='card-text' style={cardDescription}>Estaremos sempre a disposição para te auxiliar nas compras de medicamento</p>
+                    <h5 className='card-title' style={cardTitle}>5. Entrega</h5>
+                    <p className='card-text' style={cardDescription}>
+                      Receba seus medicamentos com rapidez e segurança.
+                    </p>
                   </div>
                 </div>
-
               </div>
             </div>
 

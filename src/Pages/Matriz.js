@@ -77,20 +77,17 @@ const Matriz = () => {
             <div className="row align-items-end align-items-xl-center">
               <div className="col-12 col-lg-5">
                 <div className="hero-content">
-                  <p className="lead">Clube Farma For You</p>
+                  <p className="lead"> Farma4U – Inteligência em Acesso a Medicamentos</p>
                   <h1 className="title-one">
-                    Medicamentos com preços mais acessíveis do Brasil. Economize
-                    muito mais comprando no nosso clube
+                    Concierge farmacêutico B2B que conecta pessoas aos melhores preços de medicamentos com economia e agilidade.
                   </h1>
-                  <div className="space-md"></div>
-                  <div className="space-md"></div>
                 </div>
               </div>
               <div className="col-12 col-lg-7 px-0">
                 <Image
                   src="hero-img.png"
                   className="img-fluid hero-img"
-                  alt="Hero image"
+                  alt="Hero Farma4U"
                 />
               </div>
             </div>
@@ -111,26 +108,18 @@ const Matriz = () => {
               <Col xs={12} lg={5}>
                 <div className="hero-content" id="Missao">
                   <h1 className="hero-title">
-                    Nossa missão é dar aquela força e cuidar de todo mundo!
-                    Oferecemos remédios a preço justo, de um jeito fácil, seguro
-                    e que todo mundo pode pagar.
+                    Nossa missão é facilitar o acesso a medicamentos de forma simples e acessível.
                   </h1>
                   <p className="lead">
-                    Nosso compromisso é cuidar da saúde e bem-estar de todos,
-                    oferecendo benefícios financeiros nos tratamentos médicos e
-                    garantindo a comodidade na entrega de medicamentos. O Clube
-                    Farma For You proporciona agilidade, conveniência e preços
-                    acessíveis, tornando o acesso a cuidados de qualidade mais
-                    simples e prático, promovendo uma vida mais saudável e
-                    equilibrada.
+                    Com soluções personalizadas, entregamos praticidade, cuidado e economia real para quem mais precisa.
                   </p>
                 </div>
               </Col>
             </Row>
           </Container>
         </div>
-      </div>
 
+      </div>
       <div style={{ alignContent: "center", textAlign: "center" }}>
         <div
           className="button"
@@ -285,6 +274,7 @@ const Matriz = () => {
           </div>
         </footer>
       </div>
+
     </div>
   );
 };
